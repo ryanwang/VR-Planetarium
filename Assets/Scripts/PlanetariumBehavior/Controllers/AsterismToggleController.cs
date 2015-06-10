@@ -3,10 +3,11 @@ using WidgetShowcase;
 using Asterisms;
 using System;
 using System.Collections;
+using LMWidgets;
 
-public class AsterismToggleController : WidgetDataInputBool {
-  // Fires when the data is toggled.
-  public override event EventHandler<WidgetEventArg<bool>> DataChangedHandler;
+
+public class AsterismToggleController : DataBinderToggle {
+
 
   // Returns the current toggle state of the data.
   public override bool GetCurrentData() {
@@ -14,12 +15,8 @@ public class AsterismToggleController : WidgetDataInputBool {
   }
   
   // Sets the current toggle state of the data.
-  public override void SetCurrentData(bool value) {
+  protected override void setDataModel(bool value) {
     if ( value == false )  { AsterismDrawer.TurnOffAsterisms(); } else { AsterismDrawer.TurnOnAsterisms(); }
-
-    EventHandler<WidgetEventArg<bool>> handler = DataChangedHandler;
-    if ( handler != null ) {
-      handler(this, new WidgetEventArg<bool>(GetCurrentData()));
-    }
+		
   }
 }

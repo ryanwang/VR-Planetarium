@@ -5,15 +5,21 @@ using System;
 using System.Collections;
 using LMWidgets;
 
-public class DepthControlDataBinder : DataBinderSlider {
+public class DepthControlDataBinder : DataBinderSlider
+{
 
-  // Returns the current system value of the data.
-  public override float GetCurrentData() {
-    return StarUpdater.Instance.Zoom;
-  }
+	// Returns the current system value of the data.
+	public override float GetCurrentData ()
+	{
+		if (StarUpdater.Instance == null)
+			return 0f;
+		else
+			return StarUpdater.Instance.Zoom;
+	}
   
-  // Set the current system value of the data.
-  override protected void setDataModel(float value) {
-    StarUpdater.Instance.SetZoom(value);
-  }
+	// Set the current system value of the data.
+	override protected void setDataModel (float value)
+	{
+		StarUpdater.Instance.SetZoom (value);
+	}
 }

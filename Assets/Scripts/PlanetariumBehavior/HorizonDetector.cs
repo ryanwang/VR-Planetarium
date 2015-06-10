@@ -17,7 +17,7 @@ public class HorizonDetector : MonoBehaviour {
     m_rightHandEmitter.HandEvent += onHandEvent;
 	}
 
-  private void onHandEvent(object sender, WidgetEventArg<WidgetShowcase.HandData> e) {
+  private void onHandEvent(object sender, LMWidgets.EventArg<WidgetShowcase.HandData> e) {
     if ( !e.CurrentValue.HasHand ) { 
       m_isAboveHorizon = false; 
       return;

@@ -17,7 +17,7 @@ namespace WidgetShowcase
 						InputActive.BoolEvent += ActivationHandler;
 				}
 
-				void ActivationHandler (object sender, WidgetEventArg<bool> e)
+				void ActivationHandler (object sender, LMWidgets.EventArg<bool> e)
 				{
 						if (e.CurrentValue) {
 								ReferenceCenter.SetActive (true);
@@ -31,7 +31,7 @@ namespace WidgetShowcase
 						}
 				}
 
-				void HandleHandEvent (object sender, WidgetEventArg<HandData> e)
+				void HandleHandEvent (object sender, LMWidgets.EventArg<HandData> e)
 				{
 						if (e.CurrentValue.HasHand)
 								data = e.CurrentValue;

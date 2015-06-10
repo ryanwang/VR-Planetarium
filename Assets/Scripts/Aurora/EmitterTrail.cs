@@ -56,7 +56,7 @@ namespace WidgetShowcase
 
 
 
-				void HandleHandEvent (object sender, WidgetEventArg<HandData> e)
+				void HandleHandEvent (object sender, LMWidgets.EventArg<HandData> e)
 				{
 						SetEmission (e.CurrentValue.HasHand);
 

@@ -1311,7 +1311,7 @@ Transform:
   m_Father: {fileID: 400006}
   m_RootOrder: 0
 --- !u!23 &2300000
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1319,19 +1319,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 2aae1c439d61647f38db36145aad54ac, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300002
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1339,19 +1343,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 2aae1c439d61647f38db36145aad54ac, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300004
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1359,19 +1367,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 2aae1c439d61647f38db36145aad54ac, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300006
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1379,19 +1391,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: e96715e2283574289a1ce8249e70f198, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300008
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1399,19 +1415,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 2aae1c439d61647f38db36145aad54ac, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300010
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1419,19 +1439,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 6c7a5029879224ce7a3cdd4fce96839c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300012
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1439,19 +1463,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 2aae1c439d61647f38db36145aad54ac, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300014
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1459,19 +1487,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: b2d33351f9d6343b2acad6cf64534c07, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300016
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1479,19 +1511,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: e96715e2283574289a1ce8249e70f198, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300018
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1499,19 +1535,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 2aae1c439d61647f38db36145aad54ac, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300020
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1519,15 +1559,19 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 2aae1c439d61647f38db36145aad54ac, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!33 &3300000
@@ -2009,9 +2053,11 @@ HingeJoint:
     max: 60
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900002
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2039,9 +2085,11 @@ HingeJoint:
     max: 0
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900004
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2069,9 +2117,11 @@ HingeJoint:
     max: 18
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900006
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2099,9 +2149,11 @@ HingeJoint:
     max: 18
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900008
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2129,9 +2181,11 @@ HingeJoint:
     max: 0
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900010
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2159,9 +2213,11 @@ HingeJoint:
     max: 60
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900012
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2189,9 +2245,11 @@ HingeJoint:
     max: 18
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900014
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2219,9 +2277,11 @@ HingeJoint:
     max: 0
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900016
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2249,9 +2309,11 @@ HingeJoint:
     max: 18
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900018
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2279,9 +2341,11 @@ HingeJoint:
     max: 60
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900020
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2309,9 +2373,11 @@ HingeJoint:
     max: 0
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900022
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2339,9 +2405,11 @@ HingeJoint:
     max: 0
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900024
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2369,9 +2437,11 @@ HingeJoint:
     max: 18
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900026
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2399,9 +2469,11 @@ HingeJoint:
     max: 18
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900028
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2429,9 +2501,11 @@ HingeJoint:
     max: 60
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900030
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2459,9 +2533,11 @@ HingeJoint:
     max: 60
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900032
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2489,9 +2565,11 @@ HingeJoint:
     max: 60
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900034
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2519,9 +2597,11 @@ HingeJoint:
     max: 60
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900036
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2549,9 +2629,11 @@ HingeJoint:
     max: 60
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900038
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2579,9 +2661,11 @@ HingeJoint:
     max: 60
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900040
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2609,9 +2693,11 @@ HingeJoint:
     max: 0
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900042
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2639,9 +2725,11 @@ HingeJoint:
     max: 18
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900044
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2669,9 +2757,11 @@ HingeJoint:
     max: 18
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900046
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2699,9 +2789,11 @@ HingeJoint:
     max: 0
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!59 &5900048
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -2729,9 +2821,11 @@ HingeJoint:
     max: 18
     minBounce: 0
     maxBounce: 0
+    contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2967,10 +3061,10 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100028}
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 6
   m_Type: 2
   m_Color: {r: .390331298, g: .629088998, b: .984313726, a: 1}
-  m_Intensity: 1.89999998
+  m_Intensity: 3.79999995
   m_Range: 1.98000002
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -2979,21 +3073,18 @@ Light:
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
-    m_Softness: 4
-    m_SoftnessFade: 1
+    m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
-  m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 2
-  m_ShadowSamples: 1
+  m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-  m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -3010,7 +3101,6 @@ MonoBehaviour:
   firstSegment: {fileID: 6500004}
   lastSegment: {fileID: 6500024}
   flowerCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -3040,7 +3130,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   morphCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -3075,7 +3164,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   growthDelayCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -3111,7 +3199,6 @@ MonoBehaviour:
   firstSegment: {fileID: 6500016}
   lastSegment: {fileID: 6500020}
   flowerCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -3141,7 +3228,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   morphCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -3176,7 +3262,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   growthDelayCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -3212,7 +3297,6 @@ MonoBehaviour:
   firstSegment: {fileID: 6500006}
   lastSegment: {fileID: 6500022}
   flowerCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -3242,7 +3326,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   morphCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -3277,7 +3360,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   growthDelayCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -3313,7 +3395,6 @@ MonoBehaviour:
   firstSegment: {fileID: 6500036}
   lastSegment: {fileID: 6500030}
   flowerCurve:
-    serializedVersion: 2
     m_Curve:
     - time: .311597228
       value: .0311003551
@@ -3338,12 +3419,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   morphCurve:
-    serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
   growthDelayCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -3421,11 +3500,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400042}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3438,7 +3516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -3485,7 +3562,6 @@ MonoBehaviour:
   firstSegment: {fileID: 6500012}
   lastSegment: {fileID: 6500026}
   flowerCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -3515,7 +3591,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   morphCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -3550,7 +3625,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   growthDelayCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -3608,11 +3682,10 @@ MonoBehaviour:
   useAxisAlignment: 0
   rightHandAxis: {x: 0, y: 0, z: 0}
   objectAxis: {x: 0, y: 0, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400002}
   breakForce: .400000006
   breakTorque: .400000006
+  rotateQuickly: 1
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3677,11 +3750,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400004}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3746,11 +3818,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400006}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3771,7 +3842,6 @@ MonoBehaviour:
   - {fileID: 13500010}
   sides: 8
   stemCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 7.14696944e-05
       value: .156083718
@@ -3801,11 +3871,10 @@ MonoBehaviour:
   useAxisAlignment: 0
   rightHandAxis: {x: 0, y: 0, z: 0}
   objectAxis: {x: 0, y: 0, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400008}
   breakForce: 1.5
   breakTorque: 1.5
+  rotateQuickly: 1
 --- !u!114 &11400044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3853,7 +3922,6 @@ MonoBehaviour:
   firstSegment: {fileID: 6500010}
   lastSegment: {fileID: 6500028}
   flowerCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -3883,7 +3951,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   morphCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -3918,7 +3985,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   growthDelayCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -4001,11 +4067,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400026}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4070,11 +4135,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400012}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4089,11 +4153,10 @@ MonoBehaviour:
   useAxisAlignment: 0
   rightHandAxis: {x: 0, y: 0, z: 0}
   objectAxis: {x: 0, y: 0, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400014}
   breakForce: 6
   breakTorque: 6
+  rotateQuickly: 1
 --- !u!114 &11400068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4190,11 +4253,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400016}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4257,11 +4319,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400044}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4276,11 +4337,10 @@ MonoBehaviour:
   useAxisAlignment: 0
   rightHandAxis: {x: 0, y: 0, z: 0}
   objectAxis: {x: 0, y: 0, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400020}
   breakForce: 2
   breakTorque: 2
+  rotateQuickly: 1
 --- !u!114 &11400090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4327,11 +4387,10 @@ MonoBehaviour:
   useAxisAlignment: 0
   rightHandAxis: {x: 0, y: 0, z: 0}
   objectAxis: {x: 0, y: 0, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400022}
   breakForce: .5
   breakTorque: .5
+  rotateQuickly: 1
 --- !u!114 &11400096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4428,11 +4487,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400024}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4497,11 +4555,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400026}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4564,11 +4621,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400024}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4631,11 +4687,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400006}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4651,7 +4706,6 @@ MonoBehaviour:
   firstSegment: {fileID: 6500032}
   lastSegment: {fileID: 6500000}
   flowerCurve:
-    serializedVersion: 2
     m_Curve:
     - time: .311597228
       value: .0623769835
@@ -4676,12 +4730,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   morphCurve:
-    serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
   growthDelayCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -4759,11 +4811,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400004}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4826,11 +4877,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400016}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4893,11 +4943,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400012}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4960,11 +5009,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400048}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4992,11 +5040,10 @@ MonoBehaviour:
   useAxisAlignment: 0
   rightHandAxis: {x: 0, y: 0, z: 0}
   objectAxis: {x: 0, y: 0, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400040}
   breakForce: 16
   breakTorque: 16
+  rotateQuickly: 1
 --- !u!114 &11400170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5066,11 +5113,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400042}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5086,7 +5132,6 @@ MonoBehaviour:
   firstSegment: {fileID: 6500018}
   lastSegment: {fileID: 6500008}
   flowerCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -5116,7 +5161,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   morphCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -5151,7 +5195,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   growthDelayCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -5236,11 +5279,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400044}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!114 &11400188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5256,7 +5298,6 @@ MonoBehaviour:
   firstSegment: {fileID: 6500034}
   lastSegment: {fileID: 6500014}
   flowerCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -5286,7 +5327,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   morphCurve:
-    serializedVersion: 2
     m_Curve:
     - time: -.0167011023
       value: -.00164276361
@@ -5321,7 +5361,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   growthDelayCurve:
-    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -5406,11 +5445,10 @@ MonoBehaviour:
   useAxisAlignment: 0
   rightHandAxis: {x: 0, y: 0, z: 0}
   objectAxis: {x: 0, y: 0, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400046}
   breakForce: .200000003
   breakTorque: .200000003
+  rotateQuickly: 1
 --- !u!114 &11400196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5493,11 +5531,10 @@ MonoBehaviour:
   useAxisAlignment: 1
   rightHandAxis: {x: .300000012, y: 0, z: 1}
   objectAxis: {x: 0, y: 1, z: 0}
-  rotateQuickly: 1
-  centerGrabbedObject: 0
   breakableJoint: {fileID: 5400048}
   breakForce: .0399999991
   breakTorque: .0399999991
+  rotateQuickly: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -5805,6 +5842,7 @@ ParticleSystem:
     boxX: 1
     boxY: 1
     boxZ: 1
+    arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
@@ -6837,6 +6875,7 @@ ParticleSystem:
     boxX: 1
     boxY: 1
     boxZ: 1
+    arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
@@ -7869,6 +7908,7 @@ ParticleSystem:
     boxX: 1
     boxY: 1
     boxZ: 1
+    arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
@@ -8901,6 +8941,7 @@ ParticleSystem:
     boxX: 1
     boxY: 1
     boxZ: 1
+    arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
@@ -9933,6 +9974,7 @@ ParticleSystem:
     boxX: 1
     boxY: 1
     boxZ: 1
+    arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
@@ -10965,6 +11007,7 @@ ParticleSystem:
     boxX: 1
     boxY: 1
     boxZ: 1
+    arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
@@ -11997,6 +12040,7 @@ ParticleSystem:
     boxX: 1
     boxY: 1
     boxZ: 1
+    arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
@@ -13029,6 +13073,7 @@ ParticleSystem:
     boxX: 1
     boxY: 1
     boxZ: 1
+    arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
@@ -14061,6 +14106,7 @@ ParticleSystem:
     boxX: 1
     boxY: 1
     boxZ: 1
+    arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
@@ -14867,15 +14913,19 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_RenderMode: 0
@@ -14899,15 +14949,19 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_RenderMode: 0
@@ -14931,15 +14985,19 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_RenderMode: 0
@@ -14963,15 +15021,19 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_RenderMode: 0
@@ -14995,15 +15057,19 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_RenderMode: 0
@@ -15027,15 +15093,19 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_RenderMode: 0
@@ -15059,15 +15129,19 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_RenderMode: 0
@@ -15091,15 +15165,19 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_RenderMode: 0
@@ -15123,15 +15201,19 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_RenderMode: 0
@@ -15157,4 +15239,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100072}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

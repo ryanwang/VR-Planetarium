@@ -36,7 +36,7 @@ public class Highlighter : MonoBehaviour {
     set { 
       if ( m_isActive == value ) { return; }
       m_isActive = value; 
-      m_startAlpha = renderer.material.color.a;
+      m_startAlpha = GetComponent<Renderer>().material.color.a;
       m_startIntensity = earthLight.intensity;
       m_startTime = Time.time;
       //Debug.Log("Switch to: " + m_isActive);
@@ -58,7 +58,7 @@ public class Highlighter : MonoBehaviour {
     }
 	}
 
-  private void onHandEvent(object sender, WidgetShowcase.WidgetEventArg<WidgetShowcase.HandData> e) {
+	private void onHandEvent(object sender, LMWidgets.EventArg<WidgetShowcase.HandData> e) {
     if ( WidgetShowcase.ModalityManager.Instance.HasActiveItem() ) { 
       if ( WidgetShowcase.ModalityManager.Instance.ActiveItemName == "ARMHUD" ) {
         Active = false;
@@ -102,10 +102,10 @@ public class Highlighter : MonoBehaviour {
       newIntensity = m_startIntensity + (percent * (goalIntensity - m_startIntensity));
     }
 
-    if ( goalHighlight != renderer.material.color.a ) {
-      Color temp = renderer.material.color;
+    if ( goalHighlight != GetComponent<Renderer>().material.color.a ) {
+      Color temp = GetComponent<Renderer>().material.color;
       temp.a = newHighlight;
-      renderer.material.color = temp;
+      GetComponent<Renderer>().material.color = temp;
     }
 
     if ( goalIntensity != earthLight.intensity ) {

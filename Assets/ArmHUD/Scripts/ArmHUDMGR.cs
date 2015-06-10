@@ -64,8 +64,7 @@ namespace WidgetShowcase
     
     [SerializeField]
     private List<TogglePanelDataBinder> m_TogglePanelDataBinders;
-		
-		public TimeAndLocationHandler timeAndLocationHandler;
+
 		public Text SettingsPanelDateTimeText;
 		public Text StatusPanelDateTimeText;
 		public Text StatusPanelTimeText;
@@ -89,8 +88,8 @@ namespace WidgetShowcase
 		
 		// Use this for initialization
 		void Start () {
-//      CloseAllPanels ();
-      RightAxisLookAt = ArmHUDbaseLookAtGRP.GetComponentInChildren<rightAxisLookAt>();//Make this better
+//      	CloseAllPanels ();
+			RightAxisLookAt = ArmHUDbaseLookAtGRP.GetComponentInChildren<rightAxisLookAt>();//Make this better
 			InitArmHUDState ();
 			ArmHUDAnimator.StopPlayback();
 			ArmHUDeventsAnimator.StopPlayback();
@@ -295,10 +294,10 @@ namespace WidgetShowcase
 		
 		//needed to separate these to be able to call them from the Animation clip timeline
 		public void WristGraphicsOn (){
-			GraphicsPlane.renderer.enabled = true;
+			GraphicsPlane.GetComponent<Renderer>().enabled = true;
 		}
 		public void WristGraphicsOff (){
-			GraphicsPlane.renderer.enabled = false;
+			GraphicsPlane.GetComponent<Renderer>().enabled = false;
 		}
 		
 		
@@ -399,9 +398,11 @@ namespace WidgetShowcase
 			}
 		}
 		public void UpdateArmHUDGUIvalues(){
-			SettingsPanelDateTimeText.text = timeAndLocationHandler.DateAndTime.ToLongDateString();
-			StatusPanelDateTimeText.text = timeAndLocationHandler.DateAndTime.ToLongDateString();
-			StatusPanelTimeText.text = timeAndLocationHandler.DateAndTime.ToShortTimeString() + " GMT";
+			if (TimeAndLocationHandler.Instance) {
+				SettingsPanelDateTimeText.text = TimeAndLocationHandler.Instance.DateAndTime.ToLongDateString ();
+				StatusPanelDateTimeText.text = TimeAndLocationHandler.Instance.DateAndTime.ToLongDateString ();
+				StatusPanelTimeText.text = TimeAndLocationHandler.Instance.DateAndTime.ToShortTimeString () + " GMT";
+			}
 			AsterismnBrightnessText.text = Convert.ToInt32( (asterismBrightnessDataBinder.GetCurrentData() * 100f)).ToString() + "%";
 			StarNameBrightnessText.text = Convert.ToInt32( (starNameBrightnessDataBinder.GetCurrentData() * 100f)).ToString() + "%";
 			MilkyWayIntensityText.text = Convert.ToInt32( (milkyWayIntensityDataBinder.GetCurrentData() * 100f)).ToString() + "%";

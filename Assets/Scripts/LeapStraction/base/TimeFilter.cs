@@ -36,7 +36,6 @@ namespace WidgetShowcase
 						}
 				}
 
-				bool lastEvent = false;
 				public BoolEmitter Input;
 				public int FirstEventResult = SQ_UNKNOWN; 
 // in the first event do we assume we are or are not
@@ -54,7 +53,7 @@ namespace WidgetShowcase
 
 				bool handling = false;
 
-				void HandleBoolEvent (object sender, WidgetEventArg<bool> e)
+				void HandleBoolEvent (object sender, LMWidgets.EventArg<bool> e)
 				{
 						if (handling)
 								return;

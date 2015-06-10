@@ -26,7 +26,7 @@ namespace WidgetShowcase
 						InputEmitter.BoolEvent += HandleBoolEvent;
 				}
 
-				void HandleBoolEvent (object sender, WidgetEventArg<bool> e)
+				void HandleBoolEvent (object sender, LMWidgets.EventArg<bool> e)
 				{				
 						switch (ActivationMode) {
 						case ToggleOn.OnAny:

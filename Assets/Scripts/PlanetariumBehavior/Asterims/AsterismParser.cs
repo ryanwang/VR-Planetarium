@@ -415,7 +415,7 @@ namespace Asterisms {
               m_borderLineMaterial = Resources.Load("Lines/LineMat") as Material;
             }
 
-            LineObject borderLine = LineObject.LineFactory(lineVerticies, 5.0f, AsterismDrawer.LeftCamera, m_borderLineMaterial, true);
+            LineObject borderLine = LineObject.LineFactory(lineVerticies, 5.0f, AsterismDrawer.Target, m_borderLineMaterial, true);
             borderLine.transform.parent = borderRoot.transform;
             currentAsterism.borderArt = borderLine;
 

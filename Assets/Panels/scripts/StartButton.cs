@@ -6,13 +6,13 @@ public class StartButton : ButtonBase
 {
 		public GameObject graphics;
 
-		protected override void Update ()
+		override protected void Update ()
 		{
 				base.Update ();
 		}
 
-		protected void Start ()
+		override protected void Start ()
 		{
-    base.Start ();
+				base.Start ();
 		}
 }

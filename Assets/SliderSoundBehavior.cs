@@ -77,7 +77,7 @@ public class SliderSoundBehavior : MonoBehaviour {
 #endif
 	}
 
-//  void onSliderChanged(object sender, WidgetEventArg<float> args) {
+//  void onSliderChanged(object sender, LMWidgets.EventArg<float> args) {
 //    int instanceID = (sender as SliderBase).gameObject.GetInstanceID();
 //    float lastValue = m_previousValues[instanceID].lastValue; 
 //    float valueDiff = Mathf.Abs(args.CurrentValue - lastValue);

@@ -161,8 +161,8 @@ public class PullObject : MonoBehaviour, ModalitySubscriber
         Stars.StarData starData = starBehavior.GetStarData();
 
         if ( starData != null ) {
-          int index = starData.AsterismIndex;
-          Asterisms.Asterism asterism = Asterisms.AsterismParser.AsterismData[index];
+          //int index = starData.AsterismIndex;
+          //Asterisms.Asterism asterism = Asterisms.AsterismParser.AsterismData[index];
           //asterism.lineArt.SetWidth(3.0f);
           updatedAsterism = true;
         }
@@ -180,8 +180,8 @@ public class PullObject : MonoBehaviour, ModalitySubscriber
         Stars.StarData starData = starBehavior.GetStarData();
         
         if ( starData != null ) {
-          int index = starData.AsterismIndex;
-          Asterisms.Asterism asterism = Asterisms.AsterismParser.AsterismData[index];
+          //int index = starData.AsterismIndex;
+          //Asterisms.Asterism asterism = Asterisms.AsterismParser.AsterismData[index];
           //asterism.lineArt.SetWidth(1.0f);
           updatedAsterism = true;
         }

@@ -15,7 +15,7 @@ namespace WidgetShowcase
 						InputEmitter.HandEvent += HandleHandEvent;
 				}
 
-				void HandleHandEvent (object sender, WidgetEventArg<HandData> e)
+				void HandleHandEvent (object sender, LMWidgets.EventArg<HandData> e)
 				{
 						if (e.CurrentValue.HasHand) {
 								HandModel hand = e.CurrentValue.HandModel;

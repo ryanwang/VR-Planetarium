@@ -24,7 +24,7 @@ namespace WidgetShowcase
 						BoolValue = true;
 				}
 
-				public virtual event EventHandler<WidgetEventArg<bool>> BoolEvent;
+				public virtual event EventHandler<LMWidgets.EventArg<bool>> BoolEvent;
 
 				public bool boolValue;
 
@@ -36,9 +36,9 @@ namespace WidgetShowcase
 								if (DontEmitUnchangedValue && boolValue == value)
 										return;
 								boolValue = value;
-								EventHandler<WidgetEventArg<bool>> handler = BoolEvent;
+								EventHandler<LMWidgets.EventArg<bool>> handler = BoolEvent;
 								if (handler != null) {
-										handler (this, new WidgetEventArg<bool> (value));
+										handler (this, new LMWidgets.EventArg<bool> (value));
 								}
 						}
 				}

@@ -2,26 +2,20 @@
 using WidgetShowcase;
 using System;
 using System.Collections;
+using LMWidgets;
 
-public class MilkyWayToggleController : WidgetDataInputBool {
+public class MilkyWayToggleController : DataBinderToggle {
   [SerializeField]
   private FilterBehavior m_filterBehavior;
 
-  // Fires when the data is toggled.
-  public override event EventHandler<WidgetEventArg<bool>> DataChangedHandler;
-  
   // Returns the current toggle state of the data.
   public override bool GetCurrentData() {
     return m_filterBehavior.DrawMilkyWay;
   }
   
   // Sets the current toggle state of the data.
-  public override void SetCurrentData(bool value) {
+  protected override void setDataModel(bool value) {
     m_filterBehavior.DrawMilkyWay = value;
     
-    EventHandler<WidgetEventArg<bool>> handler = DataChangedHandler;
-    if ( handler != null ) {
-      handler(this, new WidgetEventArg<bool>(GetCurrentData()));
-    }
   }
 }

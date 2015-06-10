@@ -43,7 +43,7 @@ namespace WidgetShowcase
 //			if(OverEarth.IsAboveHorizon == false && IsInteracting == false && ModalityManager.Instance.ActiveItemName == ""){
 				if(OverEarth.IsAboveHorizon == false && IsInteracting == false && joystickActiveEmitter.Value == false || ModalityManager.Instance.ActiveItemName == "ARMHUD"){
 	        if(m_isJoyzoneOn == true){
-            Debug.Log ("JoyzoneOff");
+            //Debug.Log ("JoyzoneOff");
             JoyzoneOff();
             m_isJoyzoneOn = false;
           
@@ -52,7 +52,7 @@ namespace WidgetShowcase
 //			if(OverEarth.IsAboveHorizon == false && IsInteracting == false && ModalityManager.Instance.ActiveItemName == ""){
 				if(OverEarth.IsAboveHorizon == true && IsInteracting == false && joystickActiveEmitter.Value == false && ModalityManager.Instance.ActiveItemName == ""){
           if(m_isJoyzoneOn == false){
-            Debug.Log ("JoyzoneOn");
+            //Debug.Log ("JoyzoneOn");
             JoyzoneOn();	
             m_isJoyzoneOn = true;        
           }
@@ -115,7 +115,7 @@ namespace WidgetShowcase
 //			gameObject.GetComponent<Renderer>().material = ZoneInActiveMat;
 		}
 		private IEnumerator LerpIconOffset (float destOffset) {
-			Debug.Log("Lerp wrist Icon");
+//			Debug.Log("Lerp wrist Icon");
 			float duration = 2.0f;
 			float elapsedTime = 0f;
 			while(elapsedTime < duration){

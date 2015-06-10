@@ -8,7 +8,7 @@ namespace WidgetShowcase
 		{
 				bool BoolValue { get; set; }
 
-				event EventHandler<WidgetEventArg<bool>> BoolEvent;
+				event EventHandler<LMWidgets.EventArg<bool>> BoolEvent;
 		}
 
 }

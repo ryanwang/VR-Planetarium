@@ -15,12 +15,12 @@ namespace WidgetShowcase
 						InputEmitter.FloatEvent += HandleFloatEvent;
 				}
 
-				void HandleFloatEvent (object sender, WidgetEventArg<float> e)
+				void HandleFloatEvent (object sender, LMWidgets.EventArg<float> e)
 				{
-						if (Target && Target.renderer && Target.renderer.material) {
-								Color c = Target.renderer.material.color;
+						if (Target && Target.GetComponent<Renderer>() && Target.GetComponent<Renderer>().material) {
+								Color c = Target.GetComponent<Renderer>().material.color;
 								c.a = Mathf.Clamp01 (e.CurrentValue);
-								Target.renderer.material.color = c;
+								Target.GetComponent<Renderer>().material.color = c;
 						}
 				}
 	

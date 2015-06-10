@@ -6,7 +6,12 @@ using LMWidgets;
 public class TogglePanelDataBinder : DataBinderToggle {
   [SerializeField] 
   GameObject panel;
-  
+
+  override protected void Awake() {
+    base.Awake();
+    panel.SetActive(false);
+  }
+
   override public bool GetCurrentData() {
     if ( panel.activeSelf == true ) {
       return true;

@@ -13,7 +13,7 @@ namespace WidgetShowcase
 						HandEmitter.HandEvent += HandleHandEvent;
 				}
 
-				void HandleHandEvent (object sender, WidgetEventArg<HandData> e)
+				void HandleHandEvent (object sender, LMWidgets.EventArg<HandData> e)
 				{
 						if (e.CurrentValue.HasHand) {
 								PointValue = new PointData (e.CurrentValue.HandModel.GetPalmPosition ());

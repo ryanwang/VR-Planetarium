@@ -17,8 +17,8 @@ namespace WidgetShowcase
 				{
 						if (!MovieGameObject)
 								MovieGameObject = gameObject;
-						MovieGameObject.renderer.enabled = false;
-						if (!(MovieTexture)MovieGameObject.renderer.material.mainTexture)
+						MovieGameObject.GetComponent<Renderer>().enabled = false;
+						if (!(MovieTexture)MovieGameObject.GetComponent<Renderer>().material.mainTexture)
 								Debug.Log ("No movie in " + name);
 				}
 
@@ -28,19 +28,20 @@ namespace WidgetShowcase
 						if (play) {
 								if (PlayingVideo != null)
 										PlayingVideo.PlayMovie (false);
-								renderer.enabled = true;
-								MovieGameObject.renderer.material.mainTexture = Movie;
+								GetComponent<Renderer>().enabled = true;
+								MovieGameObject.GetComponent<Renderer>().material.mainTexture = Movie;
 				
 								Movie.Play ();
-								audio.clip = Movie.audioClip;
-								audio.Play ();
+								GetComponent<AudioSource>().clip = Movie.audioClip;
+								GetComponent<AudioSource>().Play ();
 								PlayingVideo = this;
 						} else {
-								renderer.enabled = false;
+								GetComponent<Renderer>().enabled = false;
 								try {
 										Movie.Stop ();
-										audio.Stop ();
+										GetComponent<AudioSource>().Stop ();
 								} catch (System.NullReferenceException ex) {
+										Debug.LogError ("Missing Video Exception: " + ex);
 								}
 						}
 				}
@@ -64,7 +65,7 @@ namespace WidgetShowcase
 
 
 		#region IBoolEmitter implementation
-				public event System.EventHandler<WidgetEventArg<bool>> BoolEvent;
+				public event System.EventHandler<LMWidgets.EventArg<bool>> BoolEvent;
 
 				bool IsPlaying = false;
 
@@ -73,9 +74,9 @@ namespace WidgetShowcase
 						set {
 								IsPlaying = value;
 								PlayMovie (value); 
-								System.EventHandler<WidgetEventArg<bool>> BoolEventHandler = BoolEvent;
+								System.EventHandler<LMWidgets.EventArg<bool>> BoolEventHandler = BoolEvent;
 								if (BoolEventHandler != null)
-										BoolEventHandler (this, new WidgetEventArg<bool> (value));
+										BoolEventHandler (this, new LMWidgets.EventArg<bool> (value));
 						}
 				}
 		#endregion

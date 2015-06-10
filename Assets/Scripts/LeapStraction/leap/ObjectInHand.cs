@@ -25,18 +25,18 @@ namespace WidgetShowcase
 				
 				public void OnActivate() {
 //					JoyballStartPos = transform.localPosition;
-					Debug.Log ("JoyballStartPos = " + JoyballStartPos);
+					//Debug.Log ("JoyballStartPos = " + JoyballStartPos);
 					
 					InputHandEmitter.HandEvent += HandleHandEvent;
 				}
 				
 				public void OnDeactivate() {
-					Debug.Log ("ObjectInHand.OnDeactivate()");
+					//Debug.Log ("ObjectInHand.OnDeactivate()");
 					InputHandEmitter.HandEvent -= HandleHandEvent;
 					StartCoroutine(LerpToJoyZone());
 				}
 
-				void HandleHandEvent (object sender, WidgetEventArg<HandData> e)
+				void HandleHandEvent (object sender, LMWidgets.EventArg<HandData> e)
 				{
 						if (e.CurrentValue.HasHand) {
 								if (target) {
@@ -50,7 +50,7 @@ namespace WidgetShowcase
 					float lerpLength = 2.0f;
 //					DraggableStartPos = JoyBallDraggable.transform.localPosition;
 //					yield return new WaitForSeconds(1.0f);
-					Debug.Log ("LerpToJoyZone");
+					//Debug.Log ("LerpToJoyZone");
 					float elapsedTime = 0f;
 //					Vector3 currentAngle = JoyBallDraggable.transform.eulerAngles;
 					while (elapsedTime < lerpLength)

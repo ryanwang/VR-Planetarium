@@ -10,19 +10,14 @@ namespace Asterisms {
     private static float m_asterismOpacity = 0.3f;
     private static Color m_borderColor = new Color(1.0f,1.0f,1.0f, 0.0f);
     private static Color m_borderSelectedColor = new Color(1.0f,1.0f,1.0f, 0.5f);
-    private static Camera m_rightCamera;
-    private static Camera m_leftCamera;
+    private static Transform m_target;
     private static Material m_lineMat;
     private static bool m_drawAsterisms = true;
     private static GameObject m_asterismLineRoot = null;
 
-    public static Camera LeftCamera { 
-      set { m_leftCamera = value; } 
-      get { return m_leftCamera; }
-    }
-    public static Camera RightCamera { 
-      set { m_rightCamera = value; } 
-      get { return m_leftCamera; }
+    public static Transform Target { 
+      set { m_target = value; } 
+      get { return m_target; }
     }
 
     public static bool DrawToggle { get { return m_drawAsterisms; } set { m_drawAsterisms = value; } }
@@ -69,7 +64,7 @@ namespace Asterisms {
 
           if ( m_asterismLineRoot == null ) { m_asterismLineRoot = new GameObject("AsterismLineRoot"); }
 
-          LineObject asterismLines = LineObject.LineFactory(positionArray, 3.0f, m_leftCamera, m_lineMat);
+          LineObject asterismLines = LineObject.LineFactory(positionArray, 3.0f, m_target, m_lineMat);
 
           asterismLines.gameObject.name = asterism.name + "_line";
 
@@ -102,7 +97,7 @@ namespace Asterisms {
           continue; 
         }
 
-        Color currentColor = asterism.borderArt.renderer.material.color;
+        Color currentColor = asterism.borderArt.GetComponent<Renderer>().material.color;
         Color goalColor = asterism.IsSelected ? m_borderSelectedColor : m_borderColor;
         Vector4 diff = (currentColor - goalColor);
         float mag = diff.magnitude;
@@ -113,7 +108,7 @@ namespace Asterisms {
 
         Color color = Color.Lerp(currentColor, goalColor, 0.5f);
 
-        asterism.borderArt.renderer.material.color = color;
+        asterism.borderArt.GetComponent<Renderer>().material.color = color;
       }
 
       DisableAllAsterisms();
@@ -122,10 +117,10 @@ namespace Asterisms {
     private static void setAsterismColor(Color color) {
       foreach(Asterism asterism in AsterismParser.AsterismData) {
         if(asterism.lineArt == null ) { continue; }
-        Color current = asterism.lineArt.renderer.material.color;
+        Color current = asterism.lineArt.GetComponent<Renderer>().material.color;
         Vector4 diff = current - color;
         if ( diff.magnitude > 0.01f ) { 
-          asterism.lineArt.renderer.material.color = color;
+          asterism.lineArt.GetComponent<Renderer>().material.color = color;
         }
       }
     }
@@ -151,20 +146,20 @@ namespace Asterisms {
     public static float Brightness { get { return m_asterismOpacity; } }
 
 //    public static void DrawAsterisms(bool cullOffCameraAsterisms = true) {
-//      if ( m_leftCamera == null || m_rightCamera == null ) { 
+//      if ( m_target == null || m_rightCamera == null ) { 
 //        Debug.LogError("No Draw Camera Defined.");
 //        return;
 //      }
 //
 //      if ( AsterismParser.AsterismData == null ) { return; }
 //
-//      //VectorLine.SetCamera3D(m_leftCamera);
+//      //VectorLine.SetCamera3D(m_target);
 //      foreach(Asterism asterism in AsterismParser.AsterismData) {
 //        //if ( asterism.lineArt == null ) { continue; }
-//        if ( asterism.mover != null && m_leftCamera != null ) {
+//        if ( asterism.mover != null && m_target != null ) {
 //          if ( asterism.mover.transform.position == asterism.root.transform.position && cullOffCameraAsterisms) {
-//            Vector2 screenPoint = m_leftCamera.WorldToScreenPoint(asterism.mover.transform.position);
-//            if ( screenPoint.x < 0 || screenPoint.x > m_leftCamera.pixelWidth || screenPoint.y < 0 || screenPoint.y > m_leftCamera.pixelHeight ) { continue; }
+//            Vector2 screenPoint = m_target.WorldToScreenPoint(asterism.mover.transform.position);
+//            if ( screenPoint.x < 0 || screenPoint.x > m_target.pixelWidth || screenPoint.y < 0 || screenPoint.y > m_target.pixelHeight ) { continue; }
 //          }
 //        }
 //        try {

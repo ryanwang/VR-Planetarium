@@ -28,7 +28,7 @@ namespace WidgetShowcase
 						set {
 								isActive = value;
 								Feedback (string.Format ("IsActive = {0}", value));
-								ActiveLight.renderer.material.color = value ? Color.green : Color.red;
+								ActiveLight.GetComponent<Renderer>().material.color = value ? Color.green : Color.red;
 						}
 				}
 

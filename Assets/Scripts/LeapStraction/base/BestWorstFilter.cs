@@ -35,7 +35,7 @@ namespace WidgetShowcase
 						Input.BoolEvent += HandleBoolEvent;
 				}
 
-				void HandleBoolEvent (object sender, WidgetEventArg<bool> e)
+				void HandleBoolEvent (object sender, LMWidgets.EventArg<bool> e)
 				{
 						history.Add (e.CurrentValue);
 						while (history.Count > HistoryLength)

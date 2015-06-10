@@ -37,7 +37,7 @@ public class ButtonClickListener : MonoBehaviour
 //    }
 //  }
 //
-//  private void onButtonStart(object sender, WidgetEventArg<bool> arg) {
+//  private void onButtonStart(object sender, LMWidgets.EventArg<bool> arg) {
 //    if ( m_audio_pressed != null ) {
 //      m_audio_pressed.Stop();
 //      m_audio_pressed.Play();
@@ -45,7 +45,7 @@ public class ButtonClickListener : MonoBehaviour
 //  }
 //
 //
-//    private void onButtonEnd (object sender, WidgetEventArg<bool> arg)
+//    private void onButtonEnd (object sender, LMWidgets.EventArg<bool> arg)
 //    {
 //        if (m_audio_released != null) {
 //            m_audio_pressed.Stop ();
@@ -53,7 +53,7 @@ public class ButtonClickListener : MonoBehaviour
 //        }
 //    }
 //
-//    private void onDialStart (object sender, WidgetEventArg<int> arg)
+//    private void onDialStart (object sender, LMWidgets.EventArg<int> arg)
 //    {
 //        if (m_audio_pressed != null) {
 //            m_audio_pressed.Stop ();
@@ -61,14 +61,14 @@ public class ButtonClickListener : MonoBehaviour
 //        }
 //    }
 //
-//  private void onDialEnd(object sender, WidgetEventArg<int> arg) {
+//  private void onDialEnd(object sender, LMWidgets.EventArg<int> arg) {
 //    if ( m_audio_released != null ) {
 //      m_audio_pressed.Stop();
 //      m_audio_released.Play();
 //    }
 //  }
 //
-//  private void onDialChanged(object sender, WidgetEventArg<int> arg) {
+//  private void onDialChanged(object sender, LMWidgets.EventArg<int> arg) {
 //    int instanceId = (sender as DialGraphics).gameObject.GetInstanceID();
 //    if ( m_dialPrevValues[instanceId] != arg.CurrentValue ) {
 //      m_dialTick.Stop();

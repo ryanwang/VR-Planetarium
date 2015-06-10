@@ -53,7 +53,7 @@ namespace WidgetShowcase
 						}
 				}
 
-				void HandleIntEvent (object sender, WidgetEventArg<int> e)
+				void HandleIntEvent (object sender, LMWidgets.EventArg<int> e)
 				{
 						handId = e.CurrentValue;
 //						Debug.Log ("GetHandById looking for hand of id " + handId);

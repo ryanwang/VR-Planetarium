@@ -6,7 +6,7 @@ public class DrawInBackground : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-    gameObject.renderer.material.renderQueue = layer;
+    gameObject.GetComponent<Renderer>().material.renderQueue = layer;
 	}
 	
 	// Update is called once per frame

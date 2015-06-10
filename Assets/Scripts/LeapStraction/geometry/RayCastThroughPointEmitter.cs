@@ -9,21 +9,16 @@ namespace WidgetShowcase
 				public PointEmitter targetEmitter;
 
 				// Use this for initialization
-				void Start ()
+				override protected void Start ()
 				{
 						targetEmitter.PointEvent += HandlePointEvent;
 				}
 
-				void HandlePointEvent (object sender, WidgetEventArg<PointData> e)
+				void HandlePointEvent (object sender, LMWidgets.EventArg<PointData> e)
 				{
 						if (e.CurrentValue.HasData) {
 								BoolValue = RayCheck (e.CurrentValue.Point);
 						}
-				}
-
-				void Update ()
-				{
-
 				}
 		}
 

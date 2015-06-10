@@ -32,7 +32,7 @@ namespace WidgetShowcase
 
 				void GetLastAlpha ()
 				{
-						lastAlpha = alphaTarget.gameObject.renderer.material.color.a;
+						lastAlpha = alphaTarget.gameObject.GetComponent<Renderer>().material.color.a;
 				}
 
 				public float lastAlpha = 0;
@@ -51,21 +51,21 @@ namespace WidgetShowcase
 				void AdjustAlpha ()
 				{
 						//if (targetTime >= Time.time + 0.1f) {
-								if(lastAlpha > .02 && alphaTarget.renderer.enabled == false){
-									alphaTarget.renderer.enabled = true;
+								if(lastAlpha > .02 && alphaTarget.GetComponent<Renderer>().enabled == false){
+									alphaTarget.GetComponent<Renderer>().enabled = true;
 								}
 								float lerp = (Time.time - startTime) / (targetTime - startTime);
 								float alpha = Mathf.Lerp (lastAlpha, targetAlpha, lerp);
-								Color newColor = alphaTarget.renderer.material.color;
+								Color newColor = alphaTarget.GetComponent<Renderer>().material.color;
 								if (alpha < 0.01f)
 										alpha = 0;
 								newColor.a = alpha;
 								if (feedback)
 										feedback.text = (string.Format ("LERP: {0}, alpha {1}", lerp, alpha));
-								alphaTarget.renderer.material.color = newColor;
+								alphaTarget.GetComponent<Renderer>().material.color = newColor;
 								//	alphaTarget.transform.localScale = Vector3.one * Mathf.Max (0.1f, alpha) * originalScale;
 								if(lastAlpha < .02){
-									alphaTarget.renderer.enabled = false;
+									alphaTarget.GetComponent<Renderer>().enabled = false;
 								}
 					//	}
 				}

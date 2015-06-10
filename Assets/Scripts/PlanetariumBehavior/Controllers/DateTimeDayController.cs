@@ -2,33 +2,29 @@
 using WidgetShowcase;
 using System;
 using System.Collections;
+using LMWidgets;
 
-public class DateTimeDayController : WidgetDataInputInt {
-  // Fires when the data is toggled.
-  public override event EventHandler<WidgetEventArg<int>> DataChangedHandler;
-  
+
+public class DateTimeDayController : DataBinderDial {
+
   // Returns the current toggle state of the data.
-  public override int GetCurrentData() {
-    return TimeAndLocationHandler.Instance.DateAndTime.Day;
+  public override string GetCurrentData() {
+    return TimeAndLocationHandler.Instance.DateAndTime.Day.ToString();
   }
   
   // Sets the current toggle state of the data.
-  public override void SetCurrentData(int value) {
-    if ( value == 0 ) { return; }
+  protected override void setDataModel(string value) {
+	if ( value == "" || TimeAndLocationHandler.Instance) { return; }
     DateTime newDateTime = TimeAndLocationHandler.Instance.DateAndTime;
     try {
-      newDateTime = new DateTime(newDateTime.Year, newDateTime.Month, value, newDateTime.Hour, newDateTime.Minute, newDateTime.Second);
+      newDateTime = new DateTime(newDateTime.Year, newDateTime.Month, Int32.Parse(value), newDateTime.Hour, newDateTime.Minute, newDateTime.Second);
     }
     catch (ArgumentOutOfRangeException e) {
-      Debug.LogWarning("Attempting to set improper date. Ignoring: " + e.Message);
+	  Debug.LogWarning("Attempting to set improper date: " + newDateTime + " Ignoring: " + e.Message);
       return;
     }
 
     TimeAndLocationHandler.Instance.DateAndTime = newDateTime;
-    
-    EventHandler<WidgetEventArg<int>> handler = DataChangedHandler;
-    if ( handler != null ) {
-      handler(this, new WidgetEventArg<int>(GetCurrentData()));
-    }
+
   }
 }

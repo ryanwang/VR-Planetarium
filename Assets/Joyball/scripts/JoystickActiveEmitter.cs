@@ -26,7 +26,7 @@ namespace WidgetShowcase
     const string JAX_HANDS = "hands";
     
     #region loop
-    void Start ()
+    override protected void Start ()
     {
       handCountState = StateList.Init ("JAE handCountState", JAX_NO_HANDS, JAX_HANDS);
       HandFacingInput.BoolEvent += FacingHandler;
@@ -64,7 +64,7 @@ namespace WidgetShowcase
     
     int c = 0;
     
-    void HandlePumpToggle (object sender, WidgetEventArg<bool> e)
+    void HandlePumpToggle (object sender, LMWidgets.EventArg<bool> e)
     {
 //      Debug.Log (string.Format ("_____ HAND PUMP TOGGLEL {0} _____", ++c));
       
@@ -93,7 +93,7 @@ namespace WidgetShowcase
       }
     }
     
-    void FacingHandler (object sender, WidgetEventArg<bool> e)
+    void FacingHandler (object sender, LMWidgets.EventArg<bool> e)
     {
       if (BoolValue && (e.CurrentValue == true)) {
 
@@ -112,7 +112,7 @@ namespace WidgetShowcase
       yield break;
     }
     
-    void FrameEventHandler (object sender, WidgetEventArg<FrameData> e)
+    void FrameEventHandler (object sender, LMWidgets.EventArg<FrameData> e)
     {
       if (e.CurrentValue.CurrentFrame.Hands.Count > 0) {
         handCountState.Change (JAX_HANDS);

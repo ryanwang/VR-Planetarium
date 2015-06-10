@@ -87,14 +87,12 @@ namespace LMWidgets
       float scale = transform.lossyScale.z;
       m_localTriggerDistance = triggerDistance / scale;
       m_localCushionThickness = Mathf.Clamp(cushionThickness / scale, 0.0f, m_localTriggerDistance - 0.001f);
-
       if (m_isPressed == false)
       {
         if (transform.localPosition.z > m_localTriggerDistance)
         {
           m_isPressed = true;
           buttonPressed();
-          FireButtonStart();
         }
       }
       else if (m_isPressed == true)
@@ -103,7 +101,6 @@ namespace LMWidgets
         {
           m_isPressed = false;
           buttonReleased();
-          FireButtonEnd();
         }
       }
     }

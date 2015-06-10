@@ -26,10 +26,10 @@ namespace LMLineDrawing {
       set { m_continuous = value; } 
     }
 
-    private Camera m_targetCamera;
-    public Camera TargetCamera {
-      get { return m_targetCamera; }
-      set { m_targetCamera = value; }
+	private Transform m_target;
+    public Transform Target {
+      get { return m_target; }
+      set { m_target = value; }
     }
 
     private MeshFilter _MeshFilter {
@@ -47,7 +47,7 @@ namespace LMLineDrawing {
       }
     }
 
-    public static LineObject LineFactory(Vector3[] points, float width, Camera target, Material lineMaterial, bool continuous = false) {
+    public static LineObject LineFactory(Vector3[] points, float width, Transform target, Material lineMaterial, bool continuous = false) {
       if (target == null) {
         throw new System.NullReferenceException ("Line needs a target to calulate its facing.");
       }
@@ -58,7 +58,7 @@ namespace LMLineDrawing {
       line.AddComponent<MeshRenderer> ();
       LineObject lineObject = line.AddComponent<LineObject> ();
 
-      lineObject.TargetCamera = target;
+      lineObject.Target = target;
       lineObject.Width = width;
       lineObject.Continuous = continuous;
 
@@ -69,28 +69,28 @@ namespace LMLineDrawing {
 
       lineObject.GenerateNewMesh (points);
 
-      line.renderer.material = lineMaterial;
+      line.GetComponent<Renderer>().material = lineMaterial;
 
       return lineObject;
     }
 
     private void GenerateNewMesh(Vector3[] points) {
-      if (TargetCamera == null) {
+      if (Target == null) {
         throw new System.NullReferenceException ("Line needs a target camera to calulate its facing.");
       }
 
       MeshData meshData = new MeshData ();
-      LineGenerators.GenerateMeshDataFromPoints (ref meshData, points, TargetCamera.transform.position, transform.position, Width, Continuous, false);
+      LineGenerators.GenerateMeshDataFromPoints (ref meshData, points, Target.position, transform.position, Width, Continuous, false);
       _MeshFilter.mesh = meshData.GenerateMeshFromData();
     }
 
     private void UpdateMeshVerts(Vector3[] points) {
-      if (TargetCamera == null) {
+      if (Target == null) {
         throw new System.NullReferenceException ("Line needs a target camera to calulate its facing.");
       }
 
       MeshData meshData = new MeshData ();
-      LineGenerators.GenerateMeshDataFromPoints (ref meshData, points, TargetCamera.transform.position, transform.position, Width, Continuous, false);
+      LineGenerators.GenerateMeshDataFromPoints (ref meshData, points, Target.position, transform.position, Width, Continuous, false);
       _MeshFilter.mesh.vertices = meshData.Verts;
     }
 

@@ -15,7 +15,8 @@ public class DateTimeHourDataBinder : DataBinderDial {
   
   override protected void setDataModel(string value) {
     {
-      if (value == null) {
+		if (TimeAndLocationHandler.Instance == null ||
+		  value == null) {
         return;
       }
       DateTime newDateTime = TimeAndLocationHandler.Instance.DateAndTime;
@@ -24,7 +25,7 @@ public class DateTimeHourDataBinder : DataBinderDial {
         newDateTime = new DateTime (newDateTime.Year, newDateTime.Month, newDateTime.Day, Convert.ToInt32( value), newDateTime.Minute, newDateTime.Second);
       }
       catch (ArgumentOutOfRangeException e) {
-        Debug.LogWarning("Attempting to set improper date. Ignoring.");
+		Debug.LogWarning("Attempting to set improper date: " + newDateTime + " Ignoring. Exception: " + e);
         return;
       }
       TimeAndLocationHandler.Instance.DateAndTime = newDateTime;

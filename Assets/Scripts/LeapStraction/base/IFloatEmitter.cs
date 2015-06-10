@@ -8,7 +8,7 @@ namespace WidgetShowcase
 		{
 				float FloatValue { get; set; }
 
-				event EventHandler<WidgetEventArg<float>> FloatEvent;
+				event EventHandler<LMWidgets.EventArg<float>> FloatEvent;
 		}
 
 }

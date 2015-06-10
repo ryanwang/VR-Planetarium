@@ -9,7 +9,10 @@ public class StarNameToggleDataBinder : DataBinderToggle {
   SliderDemo slider;
   
   override public bool GetCurrentData() {
-    return Stars.StarUpdater.Instance.LabelDrawToggle;
+	if (Stars.StarUpdater.Instance == null)
+		return true;
+	else
+	    return Stars.StarUpdater.Instance.LabelDrawToggle;
   }
   
   override protected void setDataModel(bool value) { 

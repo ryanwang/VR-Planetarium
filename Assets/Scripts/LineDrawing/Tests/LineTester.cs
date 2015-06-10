@@ -11,15 +11,10 @@ public class LineTester : MonoBehaviour {
   private Material m_lineMaterial;
 
 	// Use this for initialization
-	void Start () {
-    LineObject line = LineObject.LineFactory (transformsToPoints (m_points), 1.0f, m_targetCamera, m_lineMaterial, true);
-    //line.AutoTarget = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+//	void Start () {
+//      LineObject line = LineObject.LineFactory (transformsToPoints (m_points), 1.0f, m_targetCamera, m_lineMaterial, true);
+//      line.AutoTarget = true;
+//	}
 
   private Vector3[] transformsToPoints(Transform[] transforms) {
     Vector3[] points = new Vector3[transforms.Length];

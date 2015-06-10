@@ -363,7 +363,7 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
 --- !u!23 &2300010
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -371,19 +371,23 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 05f94f2c3868b4469b61a71f45b3e1a7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!23 &2300018
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -391,15 +395,19 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 05f94f2c3868b4469b61a71f45b3e1a7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!33 &3300010
@@ -430,10 +438,10 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .5
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -442,21 +450,18 @@ Light:
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
-    m_Softness: 4
-    m_SoftnessFade: 1
+    m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
-  m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 1
-  m_ShadowSamples: 1
+  m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-  m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -474,7 +479,6 @@ MonoBehaviour:
   leftPhysicsModel: {fileID: 11400008, guid: 4b359b2f0d7d14ef0a97b45ec153a3ef, type: 2}
   rightGraphicsModel: {fileID: 11400010, guid: fb2d6e2c3c6ef431caaff3cf8beb3b75, type: 2}
   rightPhysicsModel: {fileID: 11400008, guid: 4b359b2f0d7d14ef0a97b45ec153a3ef, type: 2}
-  handParent: {fileID: 0}
   toolModel: {fileID: 0}
   isHeadMounted: 1
   mirrorZAxis: 0
@@ -507,13 +511,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doUpdate: 1
+  rescaleController: 1
   imageIndex: 1
-  imageColor: {r: 1, g: 1, b: 1, a: 1}
+  imageColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
   gammaCorrection: 1.29999995
   overlayImage: 0
   undistortImage: 1
   blackIsTransparent: 1
-  rescaleController: 1
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -546,13 +554,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doUpdate: 1
+  rescaleController: 1
   imageIndex: 0
-  imageColor: {r: 1, g: 1, b: 1, a: 1}
+  imageColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
   gammaCorrection: 1.70000005
   overlayImage: 0
   undistortImage: 1
   blackIsTransparent: 1
-  rescaleController: 1
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -592,15 +604,12 @@ MonoBehaviour:
   MenuKey: 32
   QuitKey: 27
   SceneNames:
-  - Hit 'return' to reset..
+  - 486974202772657475726e2720746f2072657365742e2e
   Scenes:
-  - VRDemo_Tuscany
-  IPDIncrement: .00249999994
+  - 565244656d6f5f54757363616e79
   PredictionIncrement: .00100000005
-  FOVIncrement: .200000003
-  HeightIncrement: .00999999978
   SpeedRotationIncrement: .0500000007
-  LayerName: Default
+  LayerName: 44656661756c74
   CrosshairImage: {fileID: 2800000, guid: 64ce76f827a71b44da62c30c0b506fd2, type: 3}
 --- !u!114 &11400038
 MonoBehaviour:
@@ -639,6 +648,9 @@ CharacterController:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0
@@ -658,4 +670,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100030}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

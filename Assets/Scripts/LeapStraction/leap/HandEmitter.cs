@@ -11,7 +11,7 @@ namespace WidgetShowcase
 {
 		public class HandEmitter : DataEmitter
 		{
-				public virtual event EventHandler<WidgetEventArg<HandData>> HandEvent;
+				public virtual event EventHandler<LMWidgets.EventArg<HandData>> HandEvent;
 		
 				private HandModel currentHand;
 		
@@ -32,9 +32,9 @@ namespace WidgetShowcase
 		
 				protected void EmitHand (HandModel value = null)
 				{
-						EventHandler<WidgetEventArg<HandData>> handler = HandEvent;
+						EventHandler<LMWidgets.EventArg<HandData>> handler = HandEvent;
 						if (handler != null) {
-								handler (this, new WidgetEventArg<HandData> (new HandData (value)));
+								handler (this, new LMWidgets.EventArg<HandData> (new HandData (value)));
 						}
 				}
 

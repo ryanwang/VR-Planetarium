@@ -73,7 +73,7 @@ namespace WidgetShowcase
 						return true;
 				}
 
-				void HandlePointEvent (object sender, WidgetEventArg<PointData> e)
+				void HandlePointEvent (object sender, LMWidgets.EventArg<PointData> e)
 				{
 						if (Time.time < 1)
 								return;
@@ -92,7 +92,7 @@ namespace WidgetShowcase
 
 		#region TouchTracker response
 
-				void OnHandLeave (object sender, WidgetEventArg<HandTouchData> e)
+				void OnHandLeave (object sender, LMWidgets.EventArg<HandTouchData> e)
 				{
 						if (HandContactState.state == HCS_HAS_HAND) {
 								if (TargetHandId.IntValue == e.CurrentValue.ID) {
@@ -102,7 +102,7 @@ namespace WidgetShowcase
 						}
 				}
 
-				void OnHandEnter (object sender, WidgetEventArg<HandTouchData> e)
+				void OnHandEnter (object sender, LMWidgets.EventArg<HandTouchData> e)
 				{
 						if (Time.time < 1)
 								return;
@@ -119,7 +119,7 @@ namespace WidgetShowcase
 						return HandContactState.state == HCS_HAS_HAND && data.HasHand && data.LeapHand.Id == TargetHandId.IntValue;
 				}
 
-				void HandleHandEvent (object sender, WidgetEventArg<HandData> e)
+				void HandleHandEvent (object sender, LMWidgets.EventArg<HandData> e)
 				{
 						if (IsCurrentHand (e.CurrentValue)) {
 								//Vector3 palmPos = e.CurrentValue.HandModel.GetPalmPosition ();

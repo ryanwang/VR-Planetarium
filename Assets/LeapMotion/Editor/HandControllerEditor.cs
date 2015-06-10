@@ -123,14 +123,15 @@ public class HandControllerEditor : Editor {
                                                  typeof(HandModel), true);
     }
 
-    controller.handParent = (GameObject)EditorGUILayout.ObjectField ("Hand Parent",
-                                                                    controller.handParent,
-                                                                    typeof(GameObject), true);
-
     controller.toolModel = 
         (ToolModel)EditorGUILayout.ObjectField("Tool Model",
                                                controller.toolModel,
                                                typeof(ToolModel), true);
+    
+    controller.handParent = 
+        (Transform)EditorGUILayout.ObjectField("Hand Parent Transform",
+                                               controller.handParent,
+                                               typeof(Transform), true);
 
     EditorGUILayout.Space();
 

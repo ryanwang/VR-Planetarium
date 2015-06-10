@@ -242,21 +242,22 @@ Index    STAR DATA
   		Debug.Log ("maxColorIndex: " + MaxStarColorIndex);
 
   #endif
-
-  		onStarsLoaded ();
+     StartCoroutine( onStarsLoaded ());
   		yield break;
   	}
 
-  	private void onStarsLoaded ()
+  	private IEnumerator onStarsLoaded ()
   	{
   #if DEBUG
       Debug.Log ("Star loading complete.");
   #endif
   		EventHandler<StarLoadedEventArgs> handler = StarsLoadedHandler;
-
-  		if (handler != null) {
-  			handler(this, new StarLoadedEventArgs(m_stars));
+  		while (handler == null) { 
+        handler = StarsLoadedHandler;
+        yield return null;
+        
   		}
-  	}   
+      handler(this, new StarLoadedEventArgs(m_stars));
+    }   
   }
 }

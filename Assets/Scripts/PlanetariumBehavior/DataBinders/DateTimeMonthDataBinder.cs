@@ -14,20 +14,19 @@ public class DateTimeMonthDataBinder : DataBinderDial {
   
   override protected void setDataModel(string value) {
     {
-      if (value == null) {
+      if (TimeAndLocationHandler.Instance == null ||
+	      value == null) {
         return;
       }
       
       int month = DateTime.ParseExact(value, "MMMM", CultureInfo.CurrentCulture ).Month;
       DateTime newDateTime = TimeAndLocationHandler.Instance.DateAndTime;
       
-      
       try {
-//        Debug.Log("Month DataBinder SetCurrentData(value) = " + value);
           newDateTime = new DateTime (newDateTime.Year, month, newDateTime.Day, newDateTime.Hour, newDateTime.Minute, newDateTime.Second);
       }
       catch (ArgumentOutOfRangeException e) {
-        Debug.LogWarning("Attempting to set improper date. Ignoring.");
+		Debug.LogWarning("Attempting to set improper date: " + newDateTime + " Ignoring. Exception: " + e);
         return;
       }
       TimeAndLocationHandler.Instance.DateAndTime = newDateTime;

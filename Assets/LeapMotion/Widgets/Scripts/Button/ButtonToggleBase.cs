@@ -14,9 +14,6 @@ namespace LMWidgets
     /// <summary>
     /// Gets or sets the current state of the toggle button.
     /// </summary>
-    /// <remarks>
-    /// Setting this property will also update any associated data-binder.
-    /// </remarks>
     public bool ToggleState {
       get { return m_toggleState; }
       set {

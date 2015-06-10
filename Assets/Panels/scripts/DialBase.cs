@@ -23,7 +23,6 @@ to cover the state of being active.
 				public bool snapToStep = false;
 				private GameObject target_ = null;
 				private Vector3 pivot_ = Vector3.zero;
-				private float start_angle_ = 0.0f;
 				private float prev_angle_ = 0.0f;
 				private float curr_angle_ = 0.0f;
 				public GameObject Indicator; // the object that is color changed for highlighting
@@ -78,8 +77,8 @@ to cover the state of being active.
 										}	
 										target_ = other.gameObject;
 										pivot_ = transform.InverseTransformPoint (target_.transform.position) - transform.localPosition;
-										if (!transform.rigidbody.isKinematic)
-												transform.rigidbody.angularVelocity = Vector3.zero;
+										if (!transform.GetComponent<Rigidbody>().isKinematic)
+												transform.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 								}
 						}
 				}
@@ -107,7 +106,7 @@ to cover the state of being active.
 								Deactivate ();
 								float FPS_INVERSE = 1.0f / Time.deltaTime;
 								float angular_velocity = (curr_angle_ - prev_angle_) * FPS_INVERSE;
-								transform.rigidbody.AddRelativeTorque (new Vector3 (0.0f, 0.0f, angular_velocity));
+								transform.GetComponent<Rigidbody>().AddRelativeTorque (new Vector3 (0.0f, 0.0f, angular_velocity));
 								if (snapToStep)
 										SnapToStep ();
 						}
@@ -151,7 +150,6 @@ to cover the state of being active.
 
 				public virtual void Awake ()
 				{
-						start_angle_ = transform.localRotation.eulerAngles.y;
 						if (maximumAngle < minimumAngle) {
 								minimumAngle = 0.0f;
 								maximumAngle = 0.0f;
@@ -251,7 +249,7 @@ to cover the state of being active.
 
 				public Material indicatorMaterial {
 						get {
-								return Indicator.renderer.material;
+								return Indicator.GetComponent<Renderer>().material;
 						}
 				}
 

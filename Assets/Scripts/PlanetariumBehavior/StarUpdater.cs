@@ -45,9 +45,7 @@ namespace Stars {
     [SerializeField]
     GameObject m_starPrefab; // The game object to spawn for interactive stars
     [SerializeField]
-    Camera    m_cameraLeft; // The camera to use for vectrosity rendering
-    [SerializeField]
-    Camera    m_cameraRight;
+    Transform    m_target; // The camera to use for vectrosity rendering
     [SerializeField]
     float zoom = 0.5f;
     [SerializeField]
@@ -92,8 +90,8 @@ namespace Stars {
     float     luminanceFilterStep = 0.1f;
     [SerializeField]
     float     minLuminance = 0.0f;
-    [SerializeField]
-    float LABEL_DISTANCE = 300f;
+//    [SerializeField]
+//    float LABEL_DISTANCE = 300f;
     [SerializeField]
     float labelOpacityStep = 25.5f;
     [SerializeField]
@@ -331,8 +329,7 @@ namespace Stars {
       m_starLabels = new HashSet<StarLabel>();
       m_constellationLabels = new HashSet<ConstellationLabel>();
       SetZoom(zoom);
-      AsterismDrawer.LeftCamera = m_cameraLeft;
-      AsterismDrawer.RightCamera = m_cameraRight;
+      AsterismDrawer.Target = m_target;
       m_starParser.StarsLoadedHandler += onStarsLoaded;
     }
 
@@ -375,7 +372,7 @@ namespace Stars {
         m_backgroundStarObjects[i] = new GameObject("BackgroundStarGeometry" + i);
         m_backgroundStarObjects[i].AddComponent<MeshFilter>();
         m_backgroundStarObjects[i].AddComponent<MeshRenderer>();
-        m_backgroundStarObjects[i].renderer.material = m_starMat;
+        m_backgroundStarObjects[i].GetComponent<Renderer>().material = m_starMat;
       }
 
       CombineInstance[] meshes = new CombineInstance[m_batchSize];
@@ -427,7 +424,7 @@ namespace Stars {
           colors[vertIndex] = color;
         }
         catch(IndexOutOfRangeException e) {
-          Debug.LogError("index " + vertIndex + " is out of bounds | colors array length: " + colors.Length);
+          Debug.LogError("index " + vertIndex + " is out of bounds | colors array length: " + colors.Length + " exception: " + e);
         }
       }
 
@@ -658,8 +655,6 @@ namespace Stars {
         sData.GameObjectRepresentation.GetComponent<StarBehavior>().UpdateRepresentation();
       }
 
-      Vector3[] positions = new Vector3[4];
-
       float width = 0.006f;
       float scaleDistanceAdjustment = CalculateInverseScaleFactor(position);
       width *= scaleDistanceAdjustment;
@@ -705,7 +700,7 @@ namespace Stars {
 
       if ( sData.GameObjectRepresentation != null ) 
       {
-        sData.GameObjectRepresentation.transform.GetChild(0).renderer.material.color = starColor;
+        sData.GameObjectRepresentation.transform.GetChild(0).GetComponent<Renderer>().material.color = starColor;
         return new Color32(0,0,0,0); // If we have a game object, don't show the particle version.
       }
 

@@ -3,23 +3,18 @@ using WidgetShowcase;
 using Stars;
 using System;
 using System.Collections;
+using LMWidgets;
 
-public class ZoomController : WidgetDataInputFloat {
-  public override event EventHandler<WidgetEventArg<float>> DataChangedHandler; 
-  
+public class ZoomController : DataBinderSlider {
   // Returns the current system value of the data.
   public override float GetCurrentData() {
     return StarUpdater.Instance.Zoom;
   }
   
   // Set the current system value of the data.
-  public override void SetCurrentData(float value) {
+  protected override void setDataModel(float value) {
     StarUpdater.Instance.SetZoom(value);
-    
-    EventHandler<WidgetEventArg<float>> handler = DataChangedHandler;
-    if ( handler != null ) {
-      handler(this, new WidgetEventArg<float>(GetCurrentData()));
-    }
+
   }
   
 }

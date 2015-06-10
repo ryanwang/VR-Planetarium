@@ -44,7 +44,7 @@ public class SliderControls : MonoBehaviour
 				}
 		}
 
-		void onJoyStickEvent (object sender, WidgetEventArg<JoystickEvent> e)
+		void onJoyStickEvent (object sender, LMWidgets.EventArg<JoystickEvent> e)
 		{
 				switch (e.CurrentValue.Type) {
 				case JoystickEventType.Start:
@@ -136,32 +136,32 @@ public class SliderControls : MonoBehaviour
 		}
 	#endregion
 
-		private void onStarNameSliderChange (object sender, WidgetEventArg<float> args)
+		private void onStarNameSliderChange (object sender, LMWidgets.EventArg<float> args)
 		{
 				StarUpdater.Instance.SetLabelOpacity (args.CurrentValue);
 		}
   
-		private void onMilkyWayChange (object sender, WidgetEventArg<float> args)
+		private void onMilkyWayChange (object sender, LMWidgets.EventArg<float> args)
 		{
     
 		}
   
-		private void onStarBrightnesChange (object sender, WidgetEventArg<float> args)
+		private void onStarBrightnesChange (object sender, LMWidgets.EventArg<float> args)
 		{
 				StarUpdater.Instance.SetMinLuminance (args.CurrentValue);
 		}
   
-		private void onDepthChange (object sender, WidgetEventArg<float> args)
+		private void onDepthChange (object sender, LMWidgets.EventArg<float> args)
 		{
 				StarUpdater.Instance.SetZoom (args.CurrentValue);
 		}
 
-		private void onSatChange (object sender, WidgetEventArg<float> args)
+		private void onSatChange (object sender, LMWidgets.EventArg<float> args)
 		{
 				StarUpdater.Instance.SetStarSaturation (args.CurrentValue);
 		}
 
-		private void onAsterismChange (object sender, WidgetEventArg<float> args)
+		private void onAsterismChange (object sender, LMWidgets.EventArg<float> args)
 		{
 				Asterisms.AsterismDrawer.SetAsterismOpacity (args.CurrentValue);
 		}

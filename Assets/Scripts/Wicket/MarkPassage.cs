@@ -43,12 +43,12 @@ public class MarkPassage : MonoBehaviour
 		void colorMark ()
 		{
 				if (toggleMark != null &&
-						toggleMark.renderer != null &&
-						toggleMark.renderer.material != null) {
+						toggleMark.GetComponent<Renderer>() != null &&
+						toggleMark.GetComponent<Renderer>().material != null) {
 						if (stateOn) {
-								toggleMark.renderer.material.color = onColor;
+								toggleMark.GetComponent<Renderer>().material.color = onColor;
 						} else {
-								toggleMark.renderer.material.color = offColor;
+								toggleMark.GetComponent<Renderer>().material.color = offColor;
 						}
 				}
 		}

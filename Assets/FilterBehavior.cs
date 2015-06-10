@@ -19,16 +19,16 @@ public class FilterBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    Color current = renderer.material.color;
+    Color current = GetComponent<Renderer>().material.color;
     float goalAlpha = 1.0f - MilkyWayIntensity;
 
     if ( DrawMilkyWay && current.a != goalAlpha ) {
       current.a = goalAlpha;
-      renderer.material.color = current;
+      GetComponent<Renderer>().material.color = current;
     }
     else if ( !DrawMilkyWay && current.a != 1.0f ) {
       current.a = 1.0f;
-      renderer.material.color = current;
+      GetComponent<Renderer>().material.color = current;
     }
 	}
 }

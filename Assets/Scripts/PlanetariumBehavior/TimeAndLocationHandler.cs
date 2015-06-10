@@ -6,25 +6,29 @@ public class TimeAndLocationHandler : MonoBehaviour
 {
 		public static TimeAndLocationHandler Instance;
 		[SerializeField]
-		float
-				m_latLongStep;
-		[SerializeField] 
-		GameObject
-				m_orbiterRoot;
+		GameObject m_orbiterRoot;
 		[SerializeField]
-		GameObject
-				m_earth;
+		GameObject m_earth;
 		[SerializeField]
-		GameObject
-				m_viewer;
+		GameObject m_viewer;
 		[SerializeField]
-		float
-				m_earthRadius = 45.0f;
+		float m_earthRadius = 45.0f;
+
 		public float timeScale = 1f;
+		public float m_latLongStep;
+
 		// Persisted Data
 		private DateTime m_dateTime;
+		private Vector3 m_AziLatLon;
 
-		public DateTime DateAndTime { get { return m_dateTime; } set { m_dateTime = value; } }
+		public DateTime DateAndTime {
+			get {
+				return m_dateTime;
+			}
+			set {
+				m_dateTime = value;
+			}
+		}
 
 		public float Azimuth {
 				get { return AziLatLon [0]; }
@@ -67,8 +71,9 @@ public class TimeAndLocationHandler : MonoBehaviour
 		/// </remarks>
 		public Vector3 AziLatLon { 
 				get {
-						if (!m_earth)
-								return Vector3.one;
+						if (m_viewer == null || m_earth == null)
+								return Vector3.zero;
+
 						Vector3 worldFrom = m_viewer ? (m_viewer.transform.position - m_earth.transform.position) : Vector3.zero;
 						float earthRight = Vector3.Dot (worldFrom, m_earth.transform.right);
 						float earthUp = Vector3.Dot (worldFrom, m_earth.transform.up);
@@ -100,11 +105,14 @@ public class TimeAndLocationHandler : MonoBehaviour
 								) * Mathf.Rad2Deg;
 								longitude = azimuth;
 						}
+						m_AziLatLon = new Vector3 (azimuth, latitude, longitude);
 
-						return new Vector3 (azimuth, latitude, longitude);
+						return m_AziLatLon;
 				}
 				set {
-						if (!m_viewer)
+						m_AziLatLon = value;
+
+						if (m_viewer == null || m_earth == null)
 								return;
 						// Initialize
 						m_viewer.transform.position = m_earth.transform.position + m_earth.transform.right * m_earthRadius;
@@ -119,16 +127,6 @@ public class TimeAndLocationHandler : MonoBehaviour
 						Vector3 displace = m_viewer.transform.position;
 						m_viewer.transform.position = Vector3.zero;
 						m_earth.transform.position -= displace;
-
-						// Record state
-						// NOTE: This cannot be an OnDestroy call since referenced objects might be absent
-						TimeAndLocationState state = TimeAndLocationState.Instance;
-						if (state) {
-								state.dateTime = m_dateTime;
-								state.azimuth = value [0];
-								state.latitude = value [1];
-								state.longitude = value [2];
-						}
 				}
 		}
   
@@ -183,22 +181,21 @@ public class TimeAndLocationHandler : MonoBehaviour
 		void Awake ()
 		{
 				if (Instance == null) {
-						Instance = this;
-				} else {
-						Debug.Log ("Attempting to create more than once TimeAndLocationHandlerInstance");
-				}
-		}
+					Instance = this;
+					DontDestroyOnLoad (this.gameObject);
 
-		// Use this for initialization
-		void Start ()
-		{
-				TimeAndLocationState initialState = TimeAndLocationState.Instance;
-				if (initialState) {
-						m_dateTime = initialState.dateTime;
-						AziLatLon = new Vector3 (initialState.azimuth, initialState.latitude, initialState.longitude);
+					// Initialize
+					m_dateTime = DateTime.UtcNow;
+					AziLatLon = AziLatLon;
 				} else {
-						m_dateTime = DateTime.UtcNow;
-						AziLatLon = new Vector3 (90f, 0f, 0f);
+					//Debug.Log ("Persisted State: " + Instance.gameObject.name + " will be destroyed and " + gameObject.name + " will survive");
+
+					// Persist State Data
+					m_dateTime = Instance.m_dateTime;
+					AziLatLon = Instance.m_AziLatLon;
+
+					Destroy (Instance.gameObject);
+					Instance = this;
 				}
 		}
 

@@ -7,7 +7,7 @@ namespace WidgetShowcase
 		public class FloatEmitter : DataEmitter
 		{
 		
-				public virtual event EventHandler<WidgetEventArg<float>> FloatEvent;
+				public virtual event EventHandler<LMWidgets.EventArg<float>> FloatEvent;
 		
 				private float floatValue;
 		
@@ -19,9 +19,9 @@ namespace WidgetShowcase
 								if (DontEmitUnchangedValue && (value == floatValue))
 										return;
 								floatValue = value;
-								EventHandler<WidgetEventArg<float>> handler = FloatEvent;
+								EventHandler<LMWidgets.EventArg<float>> handler = FloatEvent;
 								if (handler != null) {
-										handler (this, new WidgetEventArg<float> (value));
+										handler (this, new LMWidgets.EventArg<float> (value));
 								}
 						}
 				}

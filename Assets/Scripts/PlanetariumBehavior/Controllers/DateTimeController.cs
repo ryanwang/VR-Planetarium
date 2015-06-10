@@ -2,23 +2,19 @@
 using WidgetShowcase;
 using System;
 using System.Collections;
+using LMWidgets;
 
-public class DateTimeController : WidgetDataInputDateTime {
-	// Fires when the data is toggled.
-	public override event EventHandler<WidgetEventArg<DateTime>> DataChangedHandler;
-	
+
+public class DateTimeController : DataBinderDial {
+
 	// Returns the current toggle state of the data.
-	public override DateTime GetCurrentData() {
-		return TimeAndLocationHandler.Instance.DateAndTime;
+	public override string GetCurrentData() {
+		return TimeAndLocationHandler.Instance.DateAndTime.ToString();
 	}
 	
 	// Sets the current toggle state of the data.
-	public override void SetCurrentData(DateTime value) {
-		TimeAndLocationHandler.Instance.DateAndTime = value;
-		
-		EventHandler<WidgetEventArg<DateTime>> handler = DataChangedHandler;
-		if ( handler != null ) {
-			handler(this, new WidgetEventArg<DateTime>(GetCurrentData()));
-		}
+	protected override void setDataModel(string value) {
+//		TimeAndLocationHandler.Instance.DateAndTime = value;
+
 	}
 }

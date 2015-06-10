@@ -20,7 +20,7 @@ namespace WidgetShowcase
 {
 		public class FrameEmitter: DataEmitter
 		{
-				public virtual event EventHandler<WidgetEventArg<FrameData>> FrameEvent;
+				public virtual event EventHandler<LMWidgets.EventArg<FrameData>> FrameEvent;
 
 				public bool UseUpdate = true;
 				public bool UseFixedUpdate = false;
@@ -35,9 +35,9 @@ namespace WidgetShowcase
 								if (DontEmitUnchangedValue && (value == frameValue))
 										return;
 								frameValue = value;
-								EventHandler<WidgetEventArg<FrameData>> handler = FrameEvent;
+								EventHandler<LMWidgets.EventArg<FrameData>> handler = FrameEvent;
 								if (handler != null) {
-										handler (this, new WidgetEventArg<FrameData> (value));
+										handler (this, new LMWidgets.EventArg<FrameData> (value));
 								}
 						}
 				}

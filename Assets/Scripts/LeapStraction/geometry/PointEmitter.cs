@@ -13,7 +13,7 @@ namespace WidgetShowcase
 		public class PointEmitter : DataEmitter
 		{
 
-				public virtual event EventHandler<WidgetEventArg<PointData>> PointEvent;
+				public virtual event EventHandler<LMWidgets.EventArg<PointData>> PointEvent;
 		
 				public PointData pointValue;
 
@@ -31,9 +31,9 @@ namespace WidgetShowcase
 
 				protected void EmitValue (PointData pointValue)
 				{
-						EventHandler<WidgetEventArg<PointData>> handler = PointEvent;
+						EventHandler<LMWidgets.EventArg<PointData>> handler = PointEvent;
 						if (handler != null) {
-								handler (this, new WidgetEventArg<PointData> (pointValue));
+								handler (this, new LMWidgets.EventArg<PointData> (pointValue));
 						}
 				}
 		}

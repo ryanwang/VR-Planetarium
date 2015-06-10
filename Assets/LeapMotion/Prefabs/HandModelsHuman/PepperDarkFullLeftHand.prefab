@@ -891,6 +891,11 @@ MonoBehaviour:
   - {fileID: 400016}
   - {fileID: 400050}
   - {fileID: 400012}
+  joints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  deformPosition: 0
   modelFingerPointing: {x: 1, y: 0, z: 0}
   modelPalmFacing: {x: -0, y: -1, z: 0}
 --- !u!114 &11400002
@@ -912,7 +917,9 @@ MonoBehaviour:
   - {fileID: 11400008}
   - {fileID: 11400000}
   palm: {fileID: 400060}
-  foreArm: {fileID: 400056}
+  forearm: {fileID: 400056}
+  wristJoint: {fileID: 0}
+  elbowJoint: {fileID: 0}
   modelFingerPointing: {x: 1, y: 0, z: 0}
   modelPalmFacing: {x: -0, y: -1, z: 0}
 --- !u!114 &11400004
@@ -932,6 +939,11 @@ MonoBehaviour:
   - {fileID: 400032}
   - {fileID: 400004}
   - {fileID: 400006}
+  joints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  deformPosition: 0
   modelFingerPointing: {x: 1, y: 0, z: 0}
   modelPalmFacing: {x: -0, y: -1, z: 0}
 --- !u!114 &11400006
@@ -951,6 +963,11 @@ MonoBehaviour:
   - {fileID: 400036}
   - {fileID: 400018}
   - {fileID: 400014}
+  joints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  deformPosition: 0
   modelFingerPointing: {x: 1, y: 0, z: 0}
   modelPalmFacing: {x: -0, y: -1, z: 0}
 --- !u!114 &11400008
@@ -970,6 +987,11 @@ MonoBehaviour:
   - {fileID: 400044}
   - {fileID: 400000}
   - {fileID: 400054}
+  joints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  deformPosition: 0
   modelFingerPointing: {x: 1, y: 0, z: 0}
   modelPalmFacing: {x: -0, y: -1, z: 0}
 --- !u!114 &11400010
@@ -989,6 +1011,11 @@ MonoBehaviour:
   - {fileID: 400052}
   - {fileID: 400058}
   - {fileID: 400048}
+  joints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  deformPosition: 0
   modelFingerPointing: {x: 1, y: 0, z: 0}
   modelPalmFacing: {x: -0, y: -1, z: 0}
 --- !u!137 &13700000
@@ -1000,15 +1027,19 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: c4fa9e51bb1fb47ab90ae093e7181689, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   serializedVersion: 2
@@ -1055,4 +1086,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100020}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

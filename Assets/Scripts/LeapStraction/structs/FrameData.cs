@@ -16,20 +16,31 @@ public struct FrameData
 
 		}
 
-
-	public HandModel[] HandModels {
-		get {
-			return Controller.GetAllGraphicsHands();
+		public HandModel[] HandModels {
+				get {
+						return Controller.GetAllGraphicsHands ();
+				}
 		}
-	}
 
-  public HandModel[] PhysicsModels {
-    get {
-      return Controller.GetAllPhysicsHands();
-    }
-  }
+		public HandModel[] PhysicsModels {
+				get {
+						return Controller.GetAllPhysicsHands ();
+				}
+		}
 	
 	#region equals
+		public override bool Equals (object obj)
+		{
+				if (obj is FrameData) {
+						return Equals ((FrameData)obj);
+				}
+				return false;
+		}
+		public override int GetHashCode ()
+		{
+				return (int) CurrentFrame.Id;
+		}
+
 		public bool Equals (FrameData p)
 		{
 				return p.CurrentFrame.Id == CurrentFrame.Id;

@@ -11,15 +11,18 @@ public class LuminenceFilterDataBinder : DataBinderSlider {
   private float m_skyglowBaseAlpha;
   
   
-  void Start() {
+  override protected void Start() {
     if ( Skyglow ) {
-      m_skyglowBaseAlpha = Skyglow.renderer.material.color.a;
+      m_skyglowBaseAlpha = Skyglow.GetComponent<Renderer>().material.color.a;
     }
   }
   
   // Returns the current system value of the data.
   override public float GetCurrentData() {
-    return 1.0f - StarUpdater.Instance.MinLuminance;
+	if (StarUpdater.Instance == null)
+	  return 1.0f;
+	else
+	  return 1.0f - StarUpdater.Instance.MinLuminance;
   }
   
   // Set the current system value of the data.
@@ -28,9 +31,9 @@ public class LuminenceFilterDataBinder : DataBinderSlider {
     
     if ( Skyglow ) {
       float newSkyglowAlpha = m_skyglowBaseAlpha + ((1.0f - value) * (1.0f - m_skyglowBaseAlpha));
-      Color temp = Skyglow.renderer.material.color;
+      Color temp = Skyglow.GetComponent<Renderer>().material.color;
       temp.a = newSkyglowAlpha;
-      Skyglow.renderer.material.color = temp;
+      Skyglow.GetComponent<Renderer>().material.color = temp;
     }
   }
 }

@@ -41,7 +41,7 @@ for economy, but in another pass, I'd move all this stuff into individual nodes.
 				//bool RefInitialized = false;
 				//float lastSightedHand = -1;
 
-				public virtual event EventHandler<WidgetEventArg<JoystickEvent>> OnJoystickEvent;
+				public virtual event EventHandler<LMWidgets.EventArg<JoystickEvent>> OnJoystickEvent;
 
 				void InitActivationListener ()
 				{
@@ -53,7 +53,7 @@ for economy, but in another pass, I'd move all this stuff into individual nodes.
 						HandInput.HandEvent += HandleActivationFromInput;
 				}
 
-				void HandleActivationFromInput (object sender, WidgetEventArg<HandData> e)
+				void HandleActivationFromInput (object sender, LMWidgets.EventArg<HandData> e)
 				{
 						if (e.CurrentValue.HasHand) {
 								//lastSightedHand = Time.time;
@@ -61,7 +61,7 @@ for economy, but in another pass, I'd move all this stuff into individual nodes.
 						} 
 				}
 
-				void HandleBoolEvent (object sender, WidgetEventArg<bool> e)
+				void HandleBoolEvent (object sender, LMWidgets.EventArg<bool> e)
 				{
 	
 						activeness.Change (e.CurrentValue ? Activeness_Active : Activeness_Inactive);
@@ -70,7 +70,7 @@ for economy, but in another pass, I'd move all this stuff into individual nodes.
 				void Echo (JoystickEventType type, Vector3 direction, Quaternion rotation)
 				{
 						if (OnJoystickEvent != null) {
-								OnJoystickEvent (this, new WidgetEventArg<JoystickEvent> (new JoystickEvent (type, direction, rotation)));
+								OnJoystickEvent (this, new LMWidgets.EventArg<JoystickEvent> (new JoystickEvent (type, direction, rotation)));
 						}
 				}
 
@@ -189,7 +189,7 @@ Broadcasts the actionable properties of the joystick, expressed as a direction a
 
 						if (change.state == Activeness_Active) {
 								//Reference.transform.rotation = Draggable.transform.rotation;
-								Debug.Log ("JoyBall's ActivenessChanged to: " + change.state);
+								//Debug.Log ("JoyBall's ActivenessChanged to: " + change.state);
 								innerAlphan.SetAlpha (1.0f, .1f);
 								outerAlphan.SetAlpha (1.0f, .1f);
                 JoyballArrowsAlpha.SetAlpha(.5f, 0.25f);

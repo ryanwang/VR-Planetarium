@@ -32,7 +32,7 @@ namespace WidgetShowcase
 						}
 				}
 
-				void HandleFrameEvent (object sender, WidgetEventArg<FrameData> e)
+				void HandleFrameEvent (object sender, LMWidgets.EventArg<FrameData> e)
 				{
 						HandModel oldFound = null;
 			

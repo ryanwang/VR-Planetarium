@@ -7,7 +7,7 @@ public class TestSnapshot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		renderer.material.mainTexture = GetRTPixels(StatusRenderTex);
+		GetComponent<Renderer>().material.mainTexture = GetRTPixels(StatusRenderTex);
 	
 	}
 	

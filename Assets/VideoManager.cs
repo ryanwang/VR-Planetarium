@@ -34,7 +34,7 @@ public class VideoManager : MonoBehaviour {
     if( m_movieButtons.Count <= 0 ) { throw new System.ArgumentOutOfRangeException("Must have at least one button."); }
     if( m_videoResourceNames.Count != m_movieButtons.Count ) { throw new System.ArgumentOutOfRangeException("Must have same number of movie names and buttons."); }
 
-    renderer.enabled = false;
+    GetComponent<Renderer>().enabled = false;
 
     m_buttonsToMovieNames = new Dictionary<int, string>();
     m_movieNamesToButtons = new Dictionary<string, int>();
@@ -50,15 +50,15 @@ public class VideoManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    if ( renderer.material.mainTexture == null ) { return; }
-    if ( renderer.material.mainTexture.GetType() != typeof(MovieTexture) ) { 
+    if ( GetComponent<Renderer>().material.mainTexture == null ) { return; }
+    if ( GetComponent<Renderer>().material.mainTexture.GetType() != typeof(MovieTexture) ) { 
       Debug.LogWarning("Main texture of video plane isn't a MovieTexture.");
       return;
     }
     if ( isPaused ) { return; }
 
     // Dump the current movie when its done.
-    if ( !(renderer.material.mainTexture as MovieTexture).isPlaying ) {
+    if ( !(GetComponent<Renderer>().material.mainTexture as MovieTexture).isPlaying ) {
       EventHandler handler = MovieStopPlayingHandler;
       if ( handler != null ) { handler(this, new EventArgs()); }
       dumpCurrentMovie();
@@ -96,15 +96,15 @@ public class VideoManager : MonoBehaviour {
   }
 
   private void pauseCurrentMovie() {
-    if ( renderer.material.mainTexture == null ) { return; }
-    if ( renderer.material.mainTexture.GetType() != typeof(MovieTexture) ) { 
+    if ( GetComponent<Renderer>().material.mainTexture == null ) { return; }
+    if ( GetComponent<Renderer>().material.mainTexture.GetType() != typeof(MovieTexture) ) { 
       Debug.LogWarning("main texture of video plane isn't a MovieTexture");
       return;
     }
 #if DEBUG_VIDEO
     Debug.Log("Pausing current movie");
 #endif
-    (renderer.material.mainTexture as MovieTexture).Pause();
+    (GetComponent<Renderer>().material.mainTexture as MovieTexture).Pause();
     m_audioPlayer.Pause();
 
     EventHandler handler = MovieStopPlayingHandler;
@@ -113,8 +113,8 @@ public class VideoManager : MonoBehaviour {
   }
 
   private void playCurrentMovie() {
-    if ( renderer.material.mainTexture == null ) { return; }
-    if ( renderer.material.mainTexture.GetType() != typeof(MovieTexture) ) { 
+    if ( GetComponent<Renderer>().material.mainTexture == null ) { return; }
+    if ( GetComponent<Renderer>().material.mainTexture.GetType() != typeof(MovieTexture) ) { 
       Debug.LogWarning("main texture of video plane isn't a MovieTexture");
       return;
     }
@@ -122,9 +122,9 @@ public class VideoManager : MonoBehaviour {
     Debug.Log("Playing current movie");
 #endif
 
-    if ( renderer.enabled != true ) { renderer.enabled = true; }
+    if ( GetComponent<Renderer>().enabled != true ) { GetComponent<Renderer>().enabled = true; }
 
-    (renderer.material.mainTexture as MovieTexture).Play();
+    (GetComponent<Renderer>().material.mainTexture as MovieTexture).Play();
     m_audioPlayer.Play();
 
     EventHandler handler = MovieStartPlayingHandler;
@@ -133,15 +133,15 @@ public class VideoManager : MonoBehaviour {
   }
 
   private void dumpCurrentMovie() {
-    if ( renderer.material.mainTexture == null ) { return; }
+    if ( GetComponent<Renderer>().material.mainTexture == null ) { return; }
 #if DEBUG_VIDEO
     Debug.Log("Dumping current movie: " + m_currentMovieName);
 #endif
 
     pauseCurrentMovie();
-    if ( renderer.enabled == true ) { renderer.enabled = false; }
+    if ( GetComponent<Renderer>().enabled == true ) { GetComponent<Renderer>().enabled = false; }
     m_audioPlayer.clip = null;
-    renderer.material.mainTexture = null;
+    GetComponent<Renderer>().material.mainTexture = null;
     m_currentMovieName = "";
     Resources.UnloadUnusedAssets();
     isPaused = false;
@@ -158,7 +158,7 @@ public class VideoManager : MonoBehaviour {
       Debug.LogError("Could not load movie at: " + resourceString); 
       return;
     }
-    renderer.material.mainTexture = newMovie;
+    GetComponent<Renderer>().material.mainTexture = newMovie;
     m_audioPlayer.clip = newMovie.audioClip;
     m_currentMovieName = resourceName;
     playCurrentMovie();

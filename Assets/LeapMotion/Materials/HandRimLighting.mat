@@ -2,13 +2,14 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: HandRimLighting
   m_Shader: {fileID: 4800000, guid: f3aa0776bee3240ae93cfe1468d2482e, type: 3}
-  m_ShaderKeywords: []
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
@@ -29,14 +30,14 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Reflections
+          name: _Cube
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Cube
+          name: _Reflections
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -69,12 +70,12 @@ Material:
         second: {r: .463235319, g: .463235319, b: .463235319, a: 1}
       data:
         first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
-      data:
-        first:
           name: _SpecColor
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _OutlineColor

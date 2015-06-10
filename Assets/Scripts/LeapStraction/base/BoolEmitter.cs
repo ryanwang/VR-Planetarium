@@ -6,7 +6,7 @@ namespace WidgetShowcase
 {
 		public class BoolEmitter : DataEmitter, IBoolEmitter
 		{
-				public virtual event EventHandler<WidgetEventArg<bool>> BoolEvent;
+				public virtual event EventHandler<LMWidgets.EventArg<bool>> BoolEvent;
 
 				public bool Value;
 
@@ -27,9 +27,9 @@ namespace WidgetShowcase
 				protected void EmitValue (bool value)
 				{
 						//		Debug.Log (string.Format ("BoolEmitter {0}({2}) emitting {1}", name, value, (this.GetType ())));
-						EventHandler<WidgetEventArg<bool>> handler = BoolEvent;
+						EventHandler<LMWidgets.EventArg<bool>> handler = BoolEvent;
 						if (handler != null) {
-								handler (this, new WidgetEventArg<bool> (value));
+								handler (this, new LMWidgets.EventArg<bool> (value));
 						}
 				}
 

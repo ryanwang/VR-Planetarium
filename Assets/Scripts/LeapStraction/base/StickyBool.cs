@@ -13,7 +13,7 @@ namespace WidgetShowcase
 #region float input
 				public FloatEmitter FloatValueEmitter;
 		
-				void HandleFloatEvent (object sender, WidgetEventArg<float> e)
+				void HandleFloatEvent (object sender, LMWidgets.EventArg<float> e)
 				{
 						if (e.CurrentValue > OnValue)
 								currentRegion.Change (Top);

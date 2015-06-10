@@ -7,7 +7,7 @@ namespace WidgetShowcase
 		public class Vector3Emitter : DataEmitter
 		{
 
-				public virtual event EventHandler<WidgetEventArg<Vector3>> Vector3Event;
+				public virtual event EventHandler<LMWidgets.EventArg<Vector3>> Vector3Event;
 
 				public Vector3 vector3Value;
 
@@ -19,9 +19,9 @@ namespace WidgetShowcase
 								if (DontEmitUnchangedValue && vector3Value == value)
 										return;
 								Vector3Value = value;
-								EventHandler<WidgetEventArg<Vector3>> handler = Vector3Event;
+								EventHandler<LMWidgets.EventArg<Vector3>> handler = Vector3Event;
 								if (handler != null) {
-										handler (this, new WidgetEventArg<Vector3> (value));
+										handler (this, new LMWidgets.EventArg<Vector3> (value));
 								}
 						}
 				}

@@ -23,7 +23,7 @@ namespace WidgetShowcase
 				public List<BoolEmitter> InputEmitters = new List<BoolEmitter> ();
 				public LogicGateType LogicType = LogicGateType.And;
 
-				void Start ()
+				override protected void Start ()
 				{
 						foreach (BoolEmitter bem in InputEmitters) {
 								bem.BoolEvent += Handler;
@@ -34,7 +34,7 @@ namespace WidgetShowcase
  * note - we are polling the current state of all inputs, so the value of the changed one
 * is not (specifically) used.
 */
-				void Handler (object sender, WidgetEventArg<bool> e)
+				void Handler (object sender, LMWidgets.EventArg<bool> e)
 				{
 						switch (LogicType) {
 						case LogicGateType.And:

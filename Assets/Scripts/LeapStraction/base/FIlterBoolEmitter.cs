@@ -24,7 +24,7 @@ namespace WidgetShowcase
 
 				public BoolWhen CopyWhen = BoolWhen.IfTrue;
 		
-				void Start ()
+				override protected void Start ()
 				{
 						InputEmitter.BoolEvent += Handler;
 						LastValue = BoolValue;
@@ -32,7 +32,7 @@ namespace WidgetShowcase
 		
 				bool LastValue;
 
-				void Handler (object sender, WidgetEventArg<bool> e)
+				void Handler (object sender, LMWidgets.EventArg<bool> e)
 				{
 						if (DontEmitUnchangedValue && (LastValue == e.CurrentValue))
 								return;

@@ -1248,9 +1248,10 @@ MonoBehaviour:
   - {fileID: 11400004}
   - {fileID: 11400002}
   - {fileID: 11400000}
-  palm: {fileID: 100034}
-  forearm: {fileID: 100046}
+  palm: {fileID: 400030}
+  forearm: {fileID: 400046}
   wristJoint: {fileID: 0}
+  elbowJoint: {fileID: 0}
   filtering: .5
 --- !u!114 &11400010
 MonoBehaviour:
@@ -1285,4 +1286,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100042}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

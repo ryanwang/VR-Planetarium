@@ -14,7 +14,7 @@ namespace WidgetShowcase
 						InputBoolEmitter.BoolEvent += OnBoolChanged;
 				}
 
-				void OnBoolChanged (object sender, WidgetEventArg<bool> e)
+				void OnBoolChanged (object sender, LMWidgets.EventArg<bool> e)
 				{
 						if (targets != null) {
 //								Debug.Log (string.Format ("Setting {0} active to {1}", target.name, e.CurrentValue));
@@ -23,7 +23,7 @@ namespace WidgetShowcase
 				}
 	
 				// Update is called once per frame
-				void Start ()
+				override protected void Start ()
 				{
 						if (EmitOnStart)
 								ChangeVisibility (BoolValue);
@@ -32,10 +32,10 @@ namespace WidgetShowcase
 				void ChangeVisibility (bool value)
 				{
 						BoolValue = value;
-						foreach (GameObject target in targets) {
-								// Debug.Log (string.Format ("Setting visibility of {0} to {1}", target.name, BoolValue.ToString ()));
+//						foreach (GameObject target in targets) {
+//								// Debug.Log (string.Format ("Setting visibility of {0} to {1}", target.name, BoolValue.ToString ()));
 //								target.SetActive (BoolValue);
-						}
+//						}
 				}
 		}
 	

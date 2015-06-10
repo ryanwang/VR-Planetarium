@@ -29,8 +29,8 @@ namespace WidgetShowcase
 						}
 				}
 		
-				public event EventHandler<WidgetEventArg<HandTouchData>> HandleEnter;
-				public event EventHandler<WidgetEventArg<HandTouchData>> HandleLeave;
+				public event EventHandler<LMWidgets.EventArg<HandTouchData>> HandleEnter;
+				public event EventHandler<LMWidgets.EventArg<HandTouchData>> HandleLeave;
 	
 #region loop
 
@@ -46,12 +46,12 @@ namespace WidgetShowcase
 				}
 #endregion
 
-				void HandleEnterEcho (object sender, WidgetEventArg<HandTouchData> e)
+				void HandleEnterEcho (object sender, LMWidgets.EventArg<HandTouchData> e)
 				{
 //						Debug.Log ("Hand has entered: " + e.ToString ());
 				}
 		
-				void HandleLeaveEcho (object sender, WidgetEventArg<HandTouchData> e)
+				void HandleLeaveEcho (object sender, LMWidgets.EventArg<HandTouchData> e)
 				{
 						//	Debug.Log ("Hand has left: " + e.ToString ());
 				}
@@ -99,9 +99,9 @@ namespace WidgetShowcase
 
 				void EmitLeave (int id)
 				{
-						EventHandler<WidgetEventArg<HandTouchData>> handler = HandleLeave;
+						EventHandler<LMWidgets.EventArg<HandTouchData>> handler = HandleLeave;
 						if (handler != null) {
-								handler (this, new WidgetEventArg<HandTouchData> (MakeHandTouchData (id)));
+								handler (this, new LMWidgets.EventArg<HandTouchData> (MakeHandTouchData (id)));
 						}
 				}
 
@@ -126,9 +126,9 @@ namespace WidgetShowcase
 
 				void EmitEnter (int id)
 				{
-						EventHandler<WidgetEventArg<HandTouchData>> handler = HandleEnter;
+						EventHandler<LMWidgets.EventArg<HandTouchData>> handler = HandleEnter;
 						if (handler != null) {
-								handler (this, new WidgetEventArg<HandTouchData> (MakeHandTouchData (id)));
+								handler (this, new LMWidgets.EventArg<HandTouchData> (MakeHandTouchData (id)));
 						}
 				}
 #endregion

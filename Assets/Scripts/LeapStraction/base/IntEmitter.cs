@@ -7,7 +7,7 @@ namespace WidgetShowcase
 		public class IntEmitter : DataEmitter, IIntEmitter
 		{
 		
-				public virtual event EventHandler<WidgetEventArg<int>> IntEvent;
+				public virtual event EventHandler<LMWidgets.EventArg<int>> IntEvent;
 		
 				private int intValue;
 		
@@ -19,9 +19,9 @@ namespace WidgetShowcase
 								if (DontEmitUnchangedValue && (value == intValue))
 										return;
 								intValue = value;
-								EventHandler<WidgetEventArg<int>> handler = IntEvent;
+								EventHandler<LMWidgets.EventArg<int>> handler = IntEvent;
 								if (handler != null) {
-										handler (this, new WidgetEventArg<int> (value));
+										handler (this, new LMWidgets.EventArg<int> (value));
 								}
 						}
 				}

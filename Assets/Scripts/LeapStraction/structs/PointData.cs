@@ -25,6 +25,22 @@ namespace WidgetShowcase
 				}
 
 		#region equals
+				public override bool Equals (object obj)
+				{
+						if (obj is PointData) {
+								return Equals ((PointData)obj);
+						}
+						return false;
+				}
+
+				public override int GetHashCode ()
+				{
+						if (!HasData) {
+							return 0;
+						}
+						return Point.GetHashCode ();
+				}
+
 				public bool Equals (PointData p)
 				{
 						if (!p.HasData && !HasData)
@@ -45,7 +61,7 @@ namespace WidgetShowcase
 				}
 		#endregion
 
-				public string ToString ()
+				public override string ToString ()
 				{
 
 						return string.Format ("<< Point data {0} >>", HasData ? Point.ToString () : "--");

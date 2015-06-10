@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using LMWidgets;
 
 /**
  a test scaffold to observe handpumping behavior
@@ -27,17 +28,17 @@ namespace WidgetShowcase
 						Strength.FloatEvent += HandleStrengthEvent;
 				}
 
-		void HandleStrengthEvent (object sender, WidgetEventArg<float> e)
+		void HandleStrengthEvent (object sender, LMWidgets.EventArg<float> e)
 		{
 			StrengthFeedback.text = Mathf.RoundToInt(100 * e.CurrentValue).ToString();
 		}
 
-				void HandleHandEvent (object sender, WidgetEventArg<HandData> e)
+				void HandleHandEvent (object sender, LMWidgets.EventArg<HandData> e)
 				{
 						HandEmitterFeedback.text = e.CurrentValue.HasHand ? string.Format ("Hand ID " + e.CurrentValue.Id) : "-- no hand --";
 				}
 
-				void HandlePumpEvent (object sender, WidgetEventArg<bool> e)
+				void HandlePumpEvent (object sender, LMWidgets.EventArg<bool> e)
 				{
 						if (e.CurrentValue)
 								++fistPumpedTrue;

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using WidgetShowcase;
+using LMWidgets;
 
 public class IconManager : MonoBehaviour {
 
@@ -35,7 +36,7 @@ public class IconManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-    m_activeObject = m_joyballIcon;
+    m_activeObject = null;
 
     if ( m_rightHandEmmitter != null ) {
       m_rightHandEmmitter.HandEvent += onHandEvent;
@@ -47,13 +48,13 @@ public class IconManager : MonoBehaviour {
 	
 	}
 
-  private void onHandEvent(object sender, WidgetEventArg<HandData> e) {
+  private void onHandEvent(object sender, LMWidgets.EventArg<HandData> e) {
     if ( !e.CurrentValue.HasHand ) { 
-      if ( m_activeObject != null) { m_activeObject.renderer.enabled = false; }
+      if ( m_activeObject != null) { m_activeObject.GetComponent<Renderer>().enabled = false; }
       return;
     }
     else { 
-      if ( m_activeObject != null) { m_activeObject.renderer.enabled = true; }
+      if ( m_activeObject != null) { m_activeObject.GetComponent<Renderer>().enabled = true; }
     }
 
     HandModel hand = e.CurrentValue.HandModel;
@@ -84,6 +85,7 @@ public class IconManager : MonoBehaviour {
         
       if ( m_activeObject == null ) { m_activeObject = null; }
       StopAllCoroutines();
+      // DECISION: Joyball icon is NOT needed due to the affordance presented by the JoyBall itself
 //      StartCoroutine(transitionOut(switchToJoyball));
   		StartCoroutine(transitionOut(switchToNone));
 //      StartCoroutine(transitionOut(switchToGrabCycle));
@@ -162,8 +164,8 @@ public class IconManager : MonoBehaviour {
     }
 
     m_activeObject = m_constellationIcon;
-    m_joyballIcon.renderer.enabled = false;
-    m_constellationIcon.renderer.enabled = true;
+    m_joyballIcon.GetComponent<Renderer>().enabled = false;
+    m_constellationIcon.GetComponent<Renderer>().enabled = true;
     StartCoroutine(transitionIn());
     yield break;
   }
@@ -171,24 +173,24 @@ public class IconManager : MonoBehaviour {
   private IEnumerator switchToJoyball(TransitionDelegate next = null) {
     if ( next != null ) {
       Debug.LogWarning("Ignoring next function");
-    }
+	}
 
     m_activeObject = m_joyballIcon;
-    m_joyballIcon.renderer.enabled = true;
-    m_constellationIcon.renderer.enabled = false;
+    m_joyballIcon.GetComponent<Renderer>().enabled = true;
+    m_constellationIcon.GetComponent<Renderer>().enabled = false;
     StartCoroutine(transitionIn());
     yield break;
   }
 
   private IEnumerator switchToNone(TransitionDelegate next = null) {
     if ( next != null ) {
-      Debug.LogWarning("Ignoring next function");
+      Debug.LogWarning("Ignoring next function Time = " + Time.time);
     }
-
+		//Debug.Log ("switchToNone Time = " + Time.time);
     m_activeObject = null;
-    m_joyballIcon.renderer.enabled = false;
-    m_constellationIcon.renderer.enabled = false;
-    m_grabIcons.renderer.enabled = false;
+    m_joyballIcon.GetComponent<Renderer>().enabled = false;
+    m_constellationIcon.GetComponent<Renderer>().enabled = false;
+    m_grabIcons.GetComponent<Renderer>().enabled = false;
     yield break;
   }
   
@@ -196,10 +198,11 @@ public class IconManager : MonoBehaviour {
 		if ( next != null ) {
 			Debug.LogWarning("Ignoring next function");
 		}
+
 		m_activeObject = m_grabIcons;
-    m_grabIcons.renderer.enabled = false;
-    m_joyballIcon.renderer.enabled = false;
-    m_constellationIcon.renderer.enabled = false;
+    m_grabIcons.GetComponent<Renderer>().enabled = false;
+    m_joyballIcon.GetComponent<Renderer>().enabled = false;
+    m_constellationIcon.GetComponent<Renderer>().enabled = false;
     StartCoroutine(transitionIn());
 		yield break;
 	}  
@@ -208,7 +211,7 @@ public class IconManager : MonoBehaviour {
       StartCoroutine(transitionIn( switchToGrabCycle));
 //		m_joyballIcon.renderer.enabled = false;
 //		m_constellationIcon.renderer.enabled = false;
-  		m_grabIcons.renderer.enabled = true;
+  		m_grabIcons.GetComponent<Renderer>().enabled = true;
 //		m_activeObject = m_grabIcons;
   		StartCoroutine(GrabIconCycle());
   	}
@@ -227,9 +230,9 @@ public class IconManager : MonoBehaviour {
 	
 	while (m_activeObject == m_grabIcons){
 	  	yield return new WaitForSeconds(1.0f);
-	  	m_grabIcons.renderer.material.mainTexture = m_grabIconClosed;
+	  	m_grabIcons.GetComponent<Renderer>().material.mainTexture = m_grabIconClosed;
 		yield return new WaitForSeconds(.5f);
-		m_grabIcons.renderer.material.mainTexture = m_grabIconOpen;	
+		m_grabIcons.GetComponent<Renderer>().material.mainTexture = m_grabIconOpen;	
   	}
   }
 }

@@ -56,12 +56,12 @@ namespace LMLineDrawing {
 
       verts = new Vector3[meshData.Verts.Length + 8];
       tris = new int[meshData.Tris.Length + 24];
-      normals = new Vector3[meshData.Normals.Length + 8];
+      normals = new Vector3[normalsStartIndex + 8];
       uvs = new Vector2[ meshData.UVs.Length + 8];  
 
       Array.Copy (meshData.Verts, verts, meshData.Verts.Length);
       Array.Copy (meshData.Tris, tris, meshData.Tris.Length);
-      Array.Copy (meshData.Normals, normals, meshData.Normals.Length);
+      Array.Copy (meshData.Normals, normals, normalsStartIndex);
       Array.Copy (meshData.UVs, uvs, meshData.UVs.Length);
 
       const int vertexCountPerRing = 4;

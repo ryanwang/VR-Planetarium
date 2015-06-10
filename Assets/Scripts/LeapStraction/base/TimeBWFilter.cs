@@ -35,7 +35,7 @@ namespace WidgetShowcase
 						Input.IntEvent += HandleIntEvent;
 				}
 
-				void HandleIntEvent (object sender, WidgetEventArg<int> e)
+				void HandleIntEvent (object sender, LMWidgets.EventArg<int> e)
 				{
 						history.Add (e.CurrentValue == 0);
 						while (history.Count > HistoryLength)

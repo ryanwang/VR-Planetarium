@@ -8,7 +8,7 @@ namespace WidgetShowcase
 		{
 				int IntValue { get; set; }
 
-				event EventHandler<WidgetEventArg<int>> IntEvent;
+				event EventHandler<LMWidgets.EventArg<int>> IntEvent;
 		}
 
 }

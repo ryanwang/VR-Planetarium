@@ -55,7 +55,7 @@ namespace WidgetShowcase
 						}
 				}
 
-				void JoystickListener (object sender, WidgetEventArg<JoystickEvent> e)
+				void JoystickListener (object sender, LMWidgets.EventArg<JoystickEvent> e)
 				{
 						if (TextType) {
 								TextType.text = e.CurrentValue.Type.ToString();
