@@ -14123,6 +14123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74767819f1374493b2362bc5305493d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ArmHUDisOpen: 0
+  verticalFilterTime: 0
+  horizontalFilterTime: .100000001
   DropDelay: 2
   DroppedLerpTarget: {fileID: 0}
   DroppedLerpCurve:
@@ -14145,7 +14148,6 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  ArmHUDisOpen: 0
   GraphicsPlane: {fileID: 100570}
   StatusETC: {fileID: 2800000, guid: c56c44bf8a4d24d4b91aac016103982d, type: 3}
   SettingsETC: {fileID: 2800000, guid: a1eb3a50d13d2473db455194d6db29f4, type: 3}
@@ -14181,7 +14183,6 @@ MonoBehaviour:
   - {fileID: 11420710}
   - {fileID: 11420764}
   - {fileID: 11420562}
-  timeAndLocationHandler: {fileID: 0}
   SettingsPanelDateTimeText: {fileID: 11400358}
   StatusPanelDateTimeText: {fileID: 11400084}
   StatusPanelTimeText: {fileID: 11400420}

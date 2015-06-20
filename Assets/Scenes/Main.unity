@@ -517,7 +517,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
 --- !u!1 &560912124
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,38 +679,42 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11416332, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
-      propertyPath: Viewer
-      value: 
-      objectReference: {fileID: 493141281}
-    - target: {fileID: 11400004, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
-      propertyPath: upTarget
-      value: 
-      objectReference: {fileID: 495916982}
-    - target: {fileID: 11400006, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
-      propertyPath: centerObject
-      value: 
-      objectReference: {fileID: 495916982}
-    - target: {fileID: 11400042, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
-      propertyPath: rotationMatcher
-      value: 
-      objectReference: {fileID: 148754860}
-    - target: {fileID: 11400032, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
-      propertyPath: Controller
-      value: 
-      objectReference: {fileID: 2128630923}
-    - target: {fileID: 11400000, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
-      propertyPath: adoptiveParent
-      value: 
-      objectReference: {fileID: 148754859}
-    - target: {fileID: 11400048, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
-      propertyPath: m_rayRoot
-      value: 
-      objectReference: {fileID: 493141281}
     - target: {fileID: 11400050, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
       propertyPath: WristIconManager
       value: 
       objectReference: {fileID: 1357585718}
+    - target: {fileID: 11400050, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
+      propertyPath: handController
+      value: 
+      objectReference: {fileID: 2128630923}
+    - target: {fileID: 11400048, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
+      propertyPath: m_rayRoot
+      value: 
+      objectReference: {fileID: 493141281}
+    - target: {fileID: 11400000, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
+      propertyPath: adoptiveParent
+      value: 
+      objectReference: {fileID: 148754859}
+    - target: {fileID: 11400032, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
+      propertyPath: Controller
+      value: 
+      objectReference: {fileID: 2128630923}
+    - target: {fileID: 11400042, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
+      propertyPath: rotationMatcher
+      value: 
+      objectReference: {fileID: 148754860}
+    - target: {fileID: 11400006, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
+      propertyPath: centerObject
+      value: 
+      objectReference: {fileID: 495916982}
+    - target: {fileID: 11400004, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
+      propertyPath: upTarget
+      value: 
+      objectReference: {fileID: 495916982}
+    - target: {fileID: 11416332, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
+      propertyPath: Viewer
+      value: 
+      objectReference: {fileID: 493141281}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db8cf8618d1894664a0e3344f1441b2d, type: 2}
   m_IsPrefabParent: 0
@@ -1175,12 +1179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f1b637542444bcb84ceecf15580602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_latLongStep: 10
   m_orbiterRoot: {fileID: 728443849}
   m_earth: {fileID: 1666860124}
   m_viewer: {fileID: 148754859}
   m_earthRadius: 14
   timeScale: 1
+  m_latLongStep: 10
 --- !u!4 &1499320154
 Transform:
   m_ObjectHideFlags: 0
@@ -1537,6 +1541,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 728443850}
     m_Modifications:
+    - target: {fileID: 11469138, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
+      propertyPath: directionCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 474326, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1569,6 +1577,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11469138, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
+      propertyPath: Earth
+      value: 
+      objectReference: {fileID: 1666860125}
     - target: {fileID: 11432982, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
       propertyPath: StarLabelPrototype
       value: 
@@ -1586,9 +1598,29 @@ Prefab:
       value: 
       objectReference: {fileID: 1339587805}
     - target: {fileID: 11469138, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
-      propertyPath: Earth
-      value: 
-      objectReference: {fileID: 1666860125}
+      propertyPath: directionCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469138, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
+      propertyPath: directionCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469138, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
+      propertyPath: directionCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469138, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
+      propertyPath: directionCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469138, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
+      propertyPath: directionCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469138, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
+      propertyPath: directionCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc520f09ac86d45c185ce1ab300cd1f1, type: 2}
   m_IsPrefabParent: 0
@@ -1730,10 +1762,6 @@ Prefab:
       propertyPath: handController
       value: 
       objectReference: {fileID: 2128630923}
-    - target: {fileID: 11400410, guid: 3d7cb811471ad408a942d0e382bda1db, type: 2}
-      propertyPath: timeAndLocationHandler
-      value: 
-      objectReference: {fileID: 1499320153}
     - target: {fileID: 11400410, guid: 3d7cb811471ad408a942d0e382bda1db, type: 2}
       propertyPath: asterismBrightnessDataBinder
       value: 

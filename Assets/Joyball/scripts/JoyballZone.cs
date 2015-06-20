@@ -30,6 +30,7 @@ namespace WidgetShowcase
 		public JoystickActiveEmitter joystickActiveEmitter;
 		
 		public IconManager WristIconManager;
+		public HandController handController;
 		
     private bool m_isJoyzoneOn = false;
 		
@@ -64,23 +65,67 @@ namespace WidgetShowcase
 			if (target_ == null)
 				return;
 			
-			if(IsInteracting == true){	
+			if(IsInteracting == true) {	
 				CurrentHoverDepth = (target_.transform.position - transform.position).magnitude;
 				HoverValue = Mathf.Clamp01(InitialDepth - CurrentHoverDepth);
+				SetIconRadius();
 //				Debug.Log ("HoverValue = " + HoverValue);
 	//			ZoneAlpha.SetAlpha(HoverValue, 0.0f);
 //				WristIconManager.IconOffsetDistance = Mathf.Lerp(.04f, 3.0f, .01f);
 			}
 		}
 		
-		//Show Zone if Rhand below horizon 
-		
-		//Hide Zone if Rhand above horizon
-		
+		// Ensure that the icon remains above the JoyBall surface
+		private void SetIconRadius() {
+			// REQUIRE: this.transform.parent is HandController
+			if (handController == null) {
+			  return;
+			}
+			HandModel hand = GetHandFromFingerBone (target_.transform);
+			if (hand == null) {
+				return;
+			}
+			SphereCollider ball = GetComponent<SphereCollider>();
+			if (ball == null) {
+				return;
+			}
+
+			// MATH: The following derives the radius sufficient for the icon
+			// to float above the surface of the sphere
+			Vector3 ballLeapCenter = transform.TransformPoint (ball.center);
+			Vector3 palmLeapTo = hand.palm.position - ballLeapCenter;
+			if (!(ball.radius * ball.radius > palmLeapTo.sqrMagnitude)) {
+				WristIconManager.IconOffsetDistance = 0.04f;
+				return;
+			}
+			Vector3 palmLeapUp = -hand.GetPalmNormal();
+			float pCos = Vector3.Dot(palmLeapTo, palmLeapUp);
+			// RESULT: rSurfTo is the distance in the up direction to the sphere surface
+			float rSurfTo = Mathf.Sqrt(ball.radius * ball.radius - (palmLeapTo.sqrMagnitude - pCos * pCos)) - pCos;
+			// RESULT: planeAdd is the additional distance needed to ensure that 
+			// a plane perpendicular to palmWolrdUp does not intersect the sphere surface
+			float planeAdd = ball.radius - pCos - rSurfTo;
+
+			// Ensure that icon remains above ball surface
+			if (rSurfTo + planeAdd > 0.04f) {
+				WristIconManager.IconOffsetDistance = rSurfTo + planeAdd;
+			} else {
+				WristIconManager.IconOffsetDistance = 0.04f;
+			}
+		}
+
+		private HandModel GetHandFromFingerBone (Transform target) {
+			// WARNING: This relies on the collider hierarchy to identify hands
+			if (target.parent && 
+			    target.parent.parent) {
+				return target.parent.parent.GetComponent<HandModel> ();
+			}
+			return null;
+		}
 		
 		private bool IsHand (Collider other)
 		{
-			return other.transform.parent && other.transform.parent.parent && other.transform.parent.parent.GetComponent<HandModel> ();
+			return GetHandFromFingerBone (other.transform) != null;
 		}
 		
 		void OnTriggerEnter (Collider other)
@@ -94,7 +139,9 @@ namespace WidgetShowcase
 				InitialDepth = (target_.transform.position - transform.position).magnitude;
 				IsInteracting = true;
 				StopAllCoroutines();
-				StartCoroutine(LerpIconOffset(.12f));
+				// FIX THIS: 0.12f is the sphere radius.
+				// GOAL ensure that the icon is 0.04f above the *sphere* surface
+				//StartCoroutine(LerpIconOffset(.12f));
 				WristIconManager.ToggleGrabIconCycle(true);
 			}
 //			gameObject.GetComponent<Renderer>().material = ZoneActiveMat;

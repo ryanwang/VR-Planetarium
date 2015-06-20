@@ -10,7 +10,7 @@ namespace WidgetShowcase
 {
 	public class ArmHUDMGR : MonoBehaviour, ModalitySubscriber {
 	
-		//ArmHUD States
+		[Header("ArmHUD States")]
 		public const string STATE_NAME_ARMHUD = "ArmHUD Manager State";
 		public const string ARMHUDSTATE_START = "Start";
 		public const string ARMHUDSTATE_NOLEFTHAND = "NOLEFTHAND";
@@ -20,14 +20,22 @@ namespace WidgetShowcase
 		public const string ARMHUDSTATE_PANELVISIBLE = "Panel Visible";
 		public const string ARMHUDSTATE_DROPPED = "Waiting for hand to return";
 		public State ArmHUDState;
+		public bool ArmHUDisOpen = false;
 		
 		private const string ARMHUD = "ARMHUD";
-		
+
+		[Header("Movement")]
+		public float verticalFilterTime = 0f; // Optimal tracking data
+		public float horizontalFilterTime = 0f; // Reduced tracking data
 		public float DropDelay = 2.0f;
 		public Transform DroppedLerpTarget;
 		public AnimationCurve DroppedLerpCurve;
-		
-		public bool ArmHUDisOpen = false;
+
+		private int targetHandID = -1;
+		private SmoothedVector3 smoothedPosition;
+		private SmoothedQuaternion smoothedRotation;
+
+		[Header("References")]
 		public GameObject GraphicsPlane;
 		public Texture2D StatusETC;
 		public Texture2D SettingsETC;
@@ -84,6 +92,8 @@ namespace WidgetShowcase
 		
 		void Awake () {
 			WristGraphicsOff();
+			smoothedPosition = new SmoothedVector3 ();
+			smoothedRotation = new SmoothedQuaternion ();
 		}
 		
 		// Use this for initialization
@@ -113,11 +123,13 @@ namespace WidgetShowcase
 		void Update () {
 			HandModel model0;
 			HandModel model1;
-			
+			bool wasAligned = false;
+
 			if(handController.GetAllGraphicsHands ().Length == 1){
 				model0 = handController.GetAllGraphicsHands()[0];
 				if(model0.GetLeapHand().IsLeft == true){
 					AlignArmHUD(model0);
+					wasAligned = true;
 				}
 				else if(ArmHUDState.state == ARMHUDSTATE_PANELVISIBLE) {
 				}
@@ -135,38 +147,55 @@ namespace WidgetShowcase
 				if(model0.GetLeapHand().IsLeft &&
 				   model1.GetLeapHand().IsRight){
 					AlignArmHUD(model0);
+					wasAligned = true;
 				}
 				else if(model0.GetLeapHand().IsRight &&
 				        model1.GetLeapHand().IsLeft){
 					AlignArmHUD(model1);
+					wasAligned = true;
 				}
 				else{
 					if(ArmHUDisOpen == true){
 						ArmHUDState.Change(ARMHUDSTATE_DROPPED);
-					}				}
+					}
+				}
 			}
-			
 			else {
 				if(ArmHUDisOpen == true){
 					ArmHUDState.Change(ARMHUDSTATE_DROPPED);
-				}			}
+				}
+			}
+
 			if(ArmHUDState.state == ARMHUDSTATE_PANELVISIBLE){
 				UpdateArmHUDGUIvalues();
 			}
-			
-			
+
+			if (!wasAligned) {
+				targetHandID = -1;
+			}
 		}
-		
+
 		void AlignArmHUD (HandModel handModel){
 			ArmHUDgeom.SetActive(true);
-			Transform forearm = handModel.transform.Find (forearmName);
-			if (forearm != null) {
-				transform.position = forearm.position;
-				transform.rotation = forearm.rotation;
-			} else {
-				transform.position = handModel.GetArmCenter();
-				transform.rotation = handModel.GetArmRotation();
+
+			if (targetHandID != handModel.GetInstanceID()) {
+				// Reinitialize ArmHUD alignment
+				//Debug.Log ("Reinitialize ArmHUD alignment Time.time = " + Time.time);
+				smoothedPosition.reset = true;
+				smoothedRotation.reset = true;
+				targetHandID = handModel.GetInstanceID();
 			}
+			float sqrCos = handModel.GetArmDirection().y;
+			sqrCos *= sqrCos;
+			float delay = sqrCos * verticalFilterTime + (1f - sqrCos) * horizontalFilterTime;
+			//Debug.Log ("delay(sqrCos = " + sqrCos + ", Time.deltaTime = " + Time.deltaTime + ") = " + delay);
+			smoothedPosition.delay = delay;
+			smoothedRotation.delay = delay;
+			Vector3 localArmCenter = transform.parent.InverseTransformPoint (handModel.GetArmCenter ());
+			Quaternion localArmRotation = Quaternion.Inverse (transform.parent.rotation) * handModel.GetArmRotation ();
+			transform.localPosition = smoothedPosition.Update(localArmCenter, Time.deltaTime);
+			transform.localRotation = smoothedRotation.Update(localArmRotation, Time.deltaTime);
+			
 			if(ArmHUDisOpen == false){//Change this to state transition from ARMHUDSTATE_NOLEFTHAND -> ARMHUDSTATE_STATUS_ETC
 				if(Activate()){
 					ArmHUDAnimator.Play("Take 001_Opening");

@@ -16,6 +16,7 @@
 **Dependent Plugins**
 - Leap Motion Core Assets (2.3.1)
 - Oculus Rift Unity Plugin (0.5.0.1)
+- Quicktime (required for tutorial videos)
  
 
 Copyright 2015, Leap Motion, Inc.  Licensed subject to Leap Motion SDK Agreement.  For use only with the Leap Motion Controller or a Leap Motion-authorized embedded optical module.
